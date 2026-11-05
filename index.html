@@ -819,6 +819,9 @@ input.txt:focus{border-color:rgba(247,203,77,.7)}
 .gtile::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:45%;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);opacity:0;pointer-events:none}
 .g-bj{--f1:#2f8a4f;--f2:#0f3a22}.g-bc{--f1:#9a2b33;--f2:#3d0b12}.g-hm{--f1:#2d5cbf;--f2:#0f2456}.g-jb{--f1:#4a3a80;--f2:#150f2a}
 .g-rm{--f1:#1f7f78;--f2:#093634}.g-om{--f1:#8a3d6a;--f2:#2e0f22}.g-ew{--f1:#8a6224;--f2:#2f1e08}
+.g-sp{--f1:#1d6d8a;--f2:#0a2a3a}.g-ch{--f1:#7a3a1a;--f2:#2a1006}.g-gb{--f1:#3d6b2a;--f2:#12260b}.g-so{--f1:#4a5568;--f2:#141821}
+html.desk .gtiles .gtile,html.desk .gtiles .gtile.g-ew{height:196px}html.desk .hubmain .gtiles{gap:16px}html.desk .gart{--w:54px}html.desk .g-ew .gart{--w:66px}html.desk .g-hm .gart,html.desk .g-rm .gart,html.desk .g-gb .gart{--w:48px}
+.g-gb .gart{--w:40px}
 .gart{position:relative;display:block;--w:46px;min-height:0}
 .gart .card{position:absolute;left:50%;top:50%;--w:inherit;width:var(--w);height:calc(var(--w)*1.4);margin:calc(var(--w)*-.7) 0 0 calc(var(--w)*-.5);
   box-shadow:0 6px 14px rgba(0,0,0,.5);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
@@ -982,6 +985,141 @@ html.desk .dc{padding:8px 10px;gap:10px}html.desk .dc-ic{width:36px;height:36px;
 html.desk .dc-tx{gap:4px}html.desk .dc-tx b{font-size:13px}
 html.desk .rc{padding:6px 12px 6px 8px}html.desk .rc-art{height:40px}
 html.desk .hubdaily .hc-head,html.desk .hubrecent .hc-head{margin-bottom:2px}
+/* ===== Speed, Cheat, Garbage, Solitaire ===== */
+.xtab{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:8px;box-sizing:border-box;
+  padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));padding-block:8px;
+  background:var(--lamp),var(--tex),radial-gradient(ellipse at 50% 40%,var(--f1),var(--f2) 80%)}
+#sp{--f1:#1d6d8a;--f2:#0a2a3a}#ch{--f1:#7a3a1a;--f2:#2a1006}#gb{--f1:#3d6b2a;--f2:#12260b}
+.xcenter{justify-content:center}
+.hseat2.xwin .ava{box-shadow:0 0 0 3px #f7cb4d,0 0 22px rgba(247,203,77,.7)}
+.lbl{font:800 10px var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:inline-flex;gap:6px;align-items:center}
+.lbl .kb{font:800 10px var(--body);padding:1px 6px;border-radius:5px;background:rgba(247,203,77,.2);color:#f7cf5c;letter-spacing:0}
+html:not(.desk) .lbl .kb,html:not(.desk) .spcard .kb{display:none}
+.pill{font:800 12px var(--body);padding:4px 10px;border-radius:99px;background:rgba(0,0,0,.4);color:var(--ink)}
+/* Speed */
+#sp .hseats{justify-content:center}
+.sphand{display:flex;gap:3px;justify-content:center}.sphand .card{--w:26px}
+.spmid{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%}
+.sptbl{display:flex;align-items:flex-end;justify-content:center;gap:clamp(8px,3vw,30px)}
+.spc{display:flex;flex-direction:column;align-items:center;gap:6px}
+.spside{position:relative;--w:clamp(44px,12vw,78px)}.spside .card{--w:inherit}.spside .card+.card{position:absolute;left:3px;top:-3px}
+.spside .slot{--cw:clamp(44px,12vw,78px)}
+.sppile{background:none;border:0;padding:0;border-radius:12px;--w:clamp(62px,17vw,100px)}.sppile .card{--w:inherit}
+.sppile:disabled{opacity:1;cursor:default}
+.sppile.can .card{box-shadow:0 0 0 3px #f7cb4d,0 0 22px rgba(247,203,77,.7),0 8px 18px rgba(0,0,0,.4)}
+.spcount{font:900 72px/1 var(--display);background:var(--goldtext);-webkit-background-clip:text;background-clip:text;color:transparent;animation:sppop 1s ease-out infinite}
+@keyframes sppop{0%{transform:scale(1.4);opacity:0}20%{transform:scale(1);opacity:1}}
+.spstuck{font:800 13px var(--body);color:#f7cf5c;padding:6px 14px;border-radius:99px;background:rgba(0,0,0,.4);border:1px solid rgba(247,203,77,.5);animation:dcglow 1.2s ease-in-out infinite}
+.sphint{font-size:12px;color:var(--muted)}
+.spme{display:flex;gap:clamp(4px,1.5vw,10px);justify-content:center;padding:12px 0 6px;min-height:calc(clamp(52px,14.5vw,88px)*1.4)}
+.spcard{position:relative;background:none;border:0;padding:0;--w:clamp(52px,14.5vw,88px);transition:transform .15s}
+.spcard .card{--w:inherit;transition:box-shadow .15s}
+.spcard:disabled{opacity:1}
+.spcard.fit .card{box-shadow:0 0 0 3px #f7cb4d,0 0 16px rgba(247,203,77,.55),0 8px 18px rgba(0,0,0,.4)}
+.spcard.sel{transform:translateY(-14px)}
+.spcard .kb{position:absolute;left:50%;bottom:-20px;transform:translateX(-50%);font:800 10px var(--body);padding:1px 6px;border-radius:5px;background:rgba(247,203,77,.2);color:#f7cf5c}
+.spbtns{display:flex;flex-direction:column;gap:6px}
+.spspeed{height:60px;font:900 24px var(--body)!important;letter-spacing:.2em}
+.spspeed:disabled{filter:grayscale(.85) brightness(.55);opacity:.6}
+.spspeed.ready{background:var(--g-red)!important;color:#fff!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 4px 0 #560d0d,0 0 30px rgba(232,65,59,.6)!important;animation:dcglow 1s ease-in-out infinite}
+.spleft{display:flex;flex-direction:column;gap:8px}
+/* Cheat */
+.chmid{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%}
+.chstack{display:flex;flex-direction:column;align-items:center;gap:6px}
+.chpile{position:relative;width:150px;height:110px}.chpile .card{position:absolute;left:50%;top:50%;--w:58px}
+.chempty{position:absolute;inset:10px 40px;border:2px solid rgba(242,210,122,.45);border-radius:12px;display:grid;place-items:center;color:var(--muted);font-size:12px}
+.chreveal{display:flex;gap:6px;justify-content:center;min-height:110px;align-items:center}.chreveal .card{--w:62px}
+.chreveal.lie .card{box-shadow:0 0 0 3px #e8413b,0 0 22px rgba(232,65,59,.6)}.chreveal.truth .card{box-shadow:0 0 0 3px #33b553,0 0 22px rgba(51,181,83,.5)}
+.chclaim{display:flex;align-items:center;gap:10px;padding:9px 16px;border-radius:16px;background:linear-gradient(180deg,rgba(34,39,52,.96),rgba(16,19,27,.96));border:1px solid rgba(247,203,77,.6);font-size:14px}
+.chclaim b{font:900 20px var(--display);background:var(--goldtext);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chclaim.soft{border-color:rgba(255,255,255,.12)}
+.chverdict{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;max-width:340px;animation:bub .35s cubic-bezier(.2,.9,.3,1.2)}
+.chverdict b{font:900 30px var(--display);letter-spacing:.04em}.chverdict.truth b{color:#6fdc8c}.chverdict.lie b{color:#ff6b61}
+.chverdict span{font-size:13px;color:var(--ink)}
+.chcall{display:flex;flex-direction:column;align-items:center;gap:8px}
+.chbtn{position:relative;width:120px;height:120px;border-radius:50%;border:0;color:#fff;font:900 25px var(--body);letter-spacing:.03em;cursor:pointer;
+  background:var(--g-red);box-shadow:inset 0 2px 0 rgba(255,255,255,.5),0 5px 0 #560d0d,0 10px 24px rgba(0,0,0,.5),0 0 30px rgba(232,65,59,.5);text-shadow:0 2px 2px rgba(0,0,0,.45);animation:chpulse 1s ease-in-out infinite}
+.chbtn span{position:relative}
+.chbtn:active{transform:translateY(3px)}
+.chbtn:disabled{animation:none;filter:grayscale(.7) brightness(.6)}
+@keyframes chpulse{50%{box-shadow:inset 0 2px 0 rgba(255,255,255,.5),0 5px 0 #560d0d,0 10px 24px rgba(0,0,0,.5),0 0 46px rgba(232,65,59,.85)}}
+.chring{position:absolute;inset:-9px;width:calc(100% + 18px);height:calc(100% + 18px);transform:rotate(-90deg);pointer-events:none}
+.chring .rbg{fill:none;stroke:rgba(255,255,255,.15);stroke-width:4}
+.chring .rfg{fill:none;stroke:#f7cb4d;stroke-width:4;stroke-linecap:round;stroke-dasharray:295;animation:chring linear forwards}
+@keyframes chring{to{stroke-dashoffset:295}}
+.chhand .rmc.fit .card{box-shadow:0 0 0 2px #f7cb4d,0 6px 14px rgba(0,0,0,.4)}
+.chhand .rmc.sel .card{transform:translateY(-14px);box-shadow:0 0 0 3px #f7cb4d,0 0 16px rgba(247,203,77,.55),0 10px 18px rgba(0,0,0,.45)}
+.chhand .rmc:disabled{opacity:1;cursor:default}
+.chplay{width:100%}
+html.desk .chbtn{width:150px;height:150px;font-size:31px}
+html.desk .chmid{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:28px 46px}
+html.desk .chpile{width:190px;height:150px}html.desk .chpile .card{--w:80px}html.desk .chreveal .card{--w:86px}
+/* Garbage */
+.gbmid{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%}
+.gbpiles{display:flex;gap:16px;align-items:flex-end;justify-content:center}
+.gbhold{display:flex;flex-direction:column;align-items:center;gap:6px;--w:clamp(50px,14vw,64px)}.gbhold .card{--w:inherit;transform:rotate(-6deg)}
+.gbheld{box-shadow:0 0 0 3px #f7cb4d,0 0 20px rgba(247,203,77,.6),0 8px 18px rgba(0,0,0,.4)!important}
+.gbmsg{font-size:13px}
+.gblay{width:100%;max-width:520px;display:flex;flex-direction:column;gap:6px}
+.gbcount{color:#6fdc8c}
+.gbgrid{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:8px;justify-items:center}
+.gbslot{background:none;border:0;padding:0;display:flex;flex-direction:column;align-items:center;gap:4px;--w:clamp(44px,13vw,70px);color:#f7cf5c}
+.gbslot .card{--w:inherit}.gbslot em{font:800 11px var(--body);font-style:normal}
+.gbslot:disabled{opacity:1;cursor:default}
+.gbslot.can .card{box-shadow:0 0 0 3px #f7cb4d,0 0 18px rgba(247,203,77,.65)}
+.gbslot.can{animation:dcglow 1.2s ease-in-out infinite;border-radius:10px}
+.gbslot.hit .card{animation:gbhit .6s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes gbhit{0%{transform:scale(1.25)}}
+.gbwild{box-shadow:0 0 0 2px #f7cb4d,0 6px 14px rgba(0,0,0,.4)!important}
+.gbmini{display:grid;grid-template-columns:repeat(5,8px);gap:2px;margin:2px auto}.gbmini i{width:8px;height:11px;border-radius:2px;background:rgba(255,255,255,.2)}
+.gbmini i.f{background:#f7cb4d}.gbmini i.x{visibility:hidden}
+.gbround{display:flex;flex-direction:column;gap:6px;min-width:260px;padding:14px;border-radius:16px;background:rgba(0,0,0,.35);border:1px solid rgba(247,203,77,.4)}
+.gbround b{font:900 18px var(--display);color:#f7cf5c}
+.card.joker{color:#7a2fb3}.card.joker .mid{font-size:calc(var(--w)*.55)}
+html.desk .gbslot{--w:78px}html.desk .gblay{max-width:600px}
+/* Solitaire */
+#so{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:8px;box-sizing:border-box;padding:8px max(8px,env(safe-area-inset-left,0px));
+  background:var(--lamp),var(--tex),radial-gradient(ellipse at 50% 35%,#4a5568,#141821 80%)}
+.sobody{--cw:calc((min(100vw,1100px) - 16px - 6 * var(--g)) / 7);--g:5px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding-top:4px}
+.sotop,.sotabl{display:grid;grid-template-columns:repeat(7,var(--cw));gap:var(--g);justify-content:center}
+.sotop button,.socol button{background:none;border:0;padding:0}
+.sotop .card,.sotop .slot,.socol .card,.socol .slot{--w:var(--cw)}
+.sotop .slot,.socol>.slot{width:var(--cw);height:calc(var(--cw)*1.4);display:grid;place-items:center;color:rgba(242,210,122,.5);font:800 calc(var(--cw)*.36) var(--display)}
+.sowaste{position:relative;width:var(--cw);height:calc(var(--cw)*1.4)}
+.sowaste .card{position:absolute;top:0;left:calc(var(--i)*var(--cw)*.22)}
+.sowaste:disabled,.sofound:disabled{opacity:1}
+.socol{display:flex;flex-direction:column;align-items:center;min-height:calc(var(--cw)*1.4)}
+.socol>*+*{margin-top:calc(var(--cw)*-1.12)}
+.socol>.sodown+.sodown,.socol>.sodown:first-child+.sodown{margin-top:calc(var(--cw)*-1.28)}
+.socol .card .mid{font-size:calc(var(--w)*.42)}
+.so-recyc{font-size:calc(var(--cw)*.5)!important}
+.card.shake{animation:soshake .35s}@keyframes soshake{25%{translate:-5px 0}75%{translate:5px 0}}
+.sowin{align-self:center;display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 22px;border-radius:16px;background:rgba(0,0,0,.4);border:1px solid rgba(247,203,77,.5)}
+.sowin b{font:900 26px var(--display);color:#f7cf5c}
+.sobar{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px}
+.sobar .btn{padding:12px 6px;font-size:13px}
+.sohome{color:#6fdc8c}
+#so .bj-top .codepill{white-space:nowrap}#so .bj-top .shoe{white-space:nowrap}
+@media (max-width:440px){#so .bj-top>.eyebrow{display:none}#so .bj-top{gap:6px}}
+html.desk .sobody{--cw:min(104px,calc((100vw / var(--z) - 120px) / 9));--g:22px}
+html.desk .sobar{max-width:900px;margin:0 auto;width:100%}
+/* computer: Cheat and Garbage put players down the left like Rummy; Speed keeps your opponent across the table */
+html.desk #ch,html.desk #gb{grid-template-columns:260px minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;column-gap:24px;padding-left:24px;padding-right:24px}
+html.desk #ch>.bj-top,html.desk #gb>.bj-top,html.desk #ch>.bj-bar,html.desk #gb>.bj-bar{grid-column:1 / -1}
+html.desk #ch>.hseats,html.desk #gb>.hseats{grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:stretch;gap:12px;align-self:start}
+html.desk #ch>.rmcenter,html.desk #gb>.rmcenter{grid-column:2;grid-row:2}
+html.desk #ch .bj-bar:has(.chhand){display:grid;grid-template-columns:240px minmax(0,1fr) 320px;column-gap:24px;align-items:center}
+html.desk #ch .bj-bar:has(.chhand)>*{grid-column:1}
+html.desk #ch .bj-bar:has(.chhand)>.chhand{grid-column:2;grid-row:1 / span 8}
+html.desk #ch .bj-bar:has(.chhand)>.chplay{grid-column:3;grid-row:1 / span 8;height:64px}
+html.desk #ch .rmhand{--cw:clamp(60px,5.6vw,84px)}
+html.desk #gb .bj-bar{display:grid;grid-template-columns:minmax(0,1fr) 420px;column-gap:24px;align-items:center}
+html.desk #gb .bj-bar>*{grid-column:1}html.desk #gb .bj-bar>.rmacts,html.desk #gb .bj-bar>.btn{grid-column:2;grid-row:1 / span 4}
+html.desk #sp{padding-left:24px;padding-right:24px}
+html.desk #sp .bj-bar{display:grid;grid-template-columns:300px minmax(0,1fr) 320px;column-gap:28px;align-items:center}
+html.desk #sp .bj-bar>.spleft{grid-column:1}html.desk #sp .bj-bar>.spme{grid-column:2;padding-bottom:24px}html.desk #sp .bj-bar>.spbtns{grid-column:3}
+html.desk .spcard{--w:92px}html.desk .sppile{--w:104px}html.desk .spside{--w:82px}html.desk .sphand .card{--w:40px}
+html.desk .gbhold{--w:80px}
 /* ===== Avatars: your item on your seat color, gold ring ===== */
 .ava{background:radial-gradient(circle at 50% 32%,color-mix(in srgb,var(--ac) 78%,#fff),var(--ac) 55%,color-mix(in srgb,var(--ac) 62%,#000));
   box-shadow:0 0 0 2px #e2a523,0 0 0 3.5px #14100a,0 3px 8px rgba(0,0,0,.45)}
@@ -4468,6 +4606,10 @@ function hub(){
     ["open-jb","jb","Jacks or Better","Video poker","Solo",[[11,0],[11,1],[7,2]]],
     ["open-rm","rm","Rummy","Sets, runs, go out first","2–6 players",[[4,3],[5,3],[6,3],[7,3]]],
     ["open-om","om","Old Maid","Pair up, dodge the Queen","2–6 players",[[0],[12,0],[0]]],
+    ["open-sp","sp","Speed","Race to empty your hand","2 players",[[8,3],[9,1],[10,0]]],
+    ["open-ch","ch","Cheat","Bluff, or call it","3–6 players",[[0],[0],[7,1]]],
+    ["open-gb","gb","Garbage","Fill A to 10, chain flips","2–6 players",[[1,2],[13,1],[3,0],[10,3]]],
+    ["open-so","so","Solitaire","Classic Klondike","Solo",[[13,0],[12,1],[11,3]]],
     ["open-war","ew","Egyptian War","Flip, defend, slap","2–6 players",[[11,2],[11,0],[1,1]]]];
   const tile=([a,k,n,s2,tag,cs])=>`<button class="gtile g-${k}" data-act="${a}"><span class="gart" aria-hidden="true">${cs.map(c=>mc(c[1]==null?null:c)).join("")}</span>
       <span class="ginfo"><span class="tn">${n}</span><span class="ts">${s2}</span></span>
@@ -4500,14 +4642,18 @@ const DC_POOL=[
   {id:"jb-play",g:"jb",k:"play",n:10,r:20,t:"Play 10 video poker hands"},{id:"jb-win",g:"jb",k:"win",n:3,r:25,t:"Get paid 3 times in Jacks or Better"},
   {id:"rm-play",g:"rm",k:"play",n:1,r:20,t:"Play a round of Rummy"},{id:"rm-win",g:"rm",k:"win",n:1,r:40,t:"Go out first in Rummy"},
   {id:"om-play",g:"om",k:"play",n:2,r:20,t:"Play 2 rounds of Old Maid"},{id:"om-win",g:"om",k:"win",n:2,r:30,t:"Dodge the Old Maid twice"},
+  {id:"sp-play",g:"sp",k:"play",n:1,r:20,t:"Play a game of Speed"},{id:"sp-win",g:"sp",k:"win",n:1,r:40,t:"Win a game of Speed"},
+  {id:"ch-play",g:"ch",k:"play",n:1,r:20,t:"Play a game of Cheat"},{id:"ch-win",g:"ch",k:"win",n:1,r:40,t:"Win a game of Cheat"},
+  {id:"gb-play",g:"gb",k:"play",n:1,r:25,t:"Finish a game of Garbage"},{id:"gb-win",g:"gb",k:"win",n:1,r:45,t:"Win a game of Garbage"},
+  {id:"so-home",g:"so",k:"home",n:40,r:20,t:"Move 40 cards onto Solitaire suit piles"},{id:"so-win",g:"so",k:"win",n:1,r:40,t:"Win a game of Solitaire"},
   {id:"ew-play",g:"ew",k:"play",n:1,r:20,t:"Play a game of Egyptian War"},{id:"ew-slap",g:"ew",k:"slap",n:5,r:30,t:"Land 5 slaps in Egyptian War"},{id:"ew-win",g:"ew",k:"win",n:1,r:40,t:"Win a game of Egyptian War"}];
 const DC_ALL=50;
-const DC_ICON={bj:["#1f6b3d","🂡"],bc:["#8a2530","♦"],hm:["#2d4a99","♠"],jb:["#4a3a80","🎰"],rm:["#1f7f78","♣"],om:["#8a3d6a","♛"],ew:["#6b4a14","✋"]};
+const DC_ICON={bj:["#1f6b3d","🂡"],bc:["#8a2530","♦"],hm:["#2d4a99","♠"],jb:["#4a3a80","🎰"],rm:["#1f7f78","♣"],om:["#8a3d6a","♛"],ew:["#6b4a14","✋"],sp:["#1d6d8a","⚡"],ch:["#7a3a1a","🤥"],gb:["#3d6b2a","🗑"],so:["#4a5568","♠"]};
 function dcToday(){
   const d=today();let s=store.get("hub-daily");
   if(!s||s.d!==d){
     let h=0;for(const ch of d)h=(h*31+ch.charCodeAt(0))>>>0;const rnd=()=>{h=(h*1103515245+12345)>>>0;return h/4294967296;};
-    const games=["bj","bc","hm","jb","rm","om","ew"].sort(()=>rnd()-.5).slice(0,3);
+    const games=["bj","bc","hm","jb","rm","om","ew","sp","ch","gb","so"].sort(()=>rnd()-.5).slice(0,3);
     const pick=games.map(g=>{const opts=DC_POOL.filter(c=>c.g===g);return opts[Math.floor(rnd()*opts.length)].id;});
     s={d,ids:pick,p:{},got:{},all:false};store.set("hub-daily",s);}
   return s;
@@ -4542,7 +4688,7 @@ function hubDaily(){
   return`<div class="hubcard hubdaily"><span class="hc-head"><span class="label">Daily challenges</span><span class="dc-sub">New in ${untilMidnight()}</span></span>${cs.map(row).join("")}${foot}</div>`;
 }
 /* recent tables: one entry per game, newest first */
-const RC_CARDS={bj:[[1,0],[13,1]],bc:[[9,2],[8,3]],hm:[[12,2],[12,3]],jb:[[11,0],[11,1]],rm:[[5,3],[6,3]],om:[[12,0],[0]],ew:[[11,0],[11,1]]};
+const RC_CARDS={bj:[[1,0],[13,1]],bc:[[9,2],[8,3]],hm:[[12,2],[12,3]],jb:[[11,0],[11,1]],rm:[[5,3],[6,3]],om:[[12,0],[0]],ew:[[11,0],[11,1]],sp:[[8,3],[9,1]],ch:[[0],[7,1]],gb:[[1,2],[13,1]],so:[[13,0],[12,1]]};
 function rcNote(g,mode,net,won,withNames){
   try{let L=store.get("hub-recent");if(!Array.isArray(L))L=[];
     const old=L.find(x=>x.g===g),now=Date.now(),same=old&&old.m===mode&&now-old.at<3*3600e3;
@@ -4560,18 +4706,18 @@ function agoLong(t){const m=Math.round((Date.now()-t)/60000);if(m<2)return"just 
   const d=Math.round(h/24);return d===1?"yesterday":d<7?new Date(t).toLocaleDateString(undefined,{weekday:"long"}):d+" days ago";}
 function hubRecent(){
   let L=store.get("hub-recent");if(!Array.isArray(L)||!L.length)return"";
-  const NM={ew:"Egyptian War",bj:"Blackjack",bc:"Baccarat",jb:"Jacks or Better",hm:"Texas Hold'em",rm:"Rummy",om:"Old Maid"};
+  const NM={ew:"Egyptian War",bj:"Blackjack",bc:"Baccarat",jb:"Jacks or Better",hm:"Texas Hold'em",rm:"Rummy",om:"Old Maid",sp:"Speed",ch:"Cheat",gb:"Garbage",so:"Solitaire"};
   const mc=c=>c[1]==null?`<div class="card down"></div>`:cardHTML(c).replace(/ data-key="[^"]*"/,"");
   const rows=L.slice(0,3).filter(x=>NM[x.g]).map(x=>{
     const how=x.m==="pr"?(PR_SOLO.has(x.g)?"Practice":"Practice vs bots"):x.m==="solo"?"Solo":x.w&&x.w.length?`With ${x.w.map(esc).join(", ")}`:"Online";
-    const res=x.m==="pr"?"":x.g==="ew"||x.g==="rm"?(x.won?` · <span class="up">won</span>`:""):x.net?` · <span class="${x.net>0?"up":"dn"}">${x.net>0?"+":"−"}${fmt(Math.abs(x.net))}</span>`:"";
+    const res=x.m==="pr"?"":["ew","rm","sp","ch","gb","so"].includes(x.g)?(x.won?` · <span class="up">won</span>`:""):x.net?` · <span class="${x.net>0?"up":"dn"}">${x.net>0?"+":"−"}${fmt(Math.abs(x.net))}</span>`:"";
     return`<button class="rc g-${x.g==="ew"?"ew":x.g}" data-act="rc-go" data-g="${x.g}" data-m="${x.m}"><span class="rc-art" aria-hidden="true">${(RC_CARDS[x.g]||[]).map(mc).join("")}</span>
       <span class="rc-tx"><b>${NM[x.g]}</b><span>${how} · ${agoLong(x.at)}${res}</span></span><span class="rc-go" aria-hidden="true">›</span></button>`;}).join("");
   return`<div class="hubcard hubrecent"><span class="hc-head"><span class="label">Jump back in</span></span>${rows}</div>`;
 }
 function hubRecord(){
   const s=ST.get(),h=s.hist.slice(-30),g=s.games;let n=0,w=0,net=0,best=null;
-  const NM={ew:"Egyptian War",bj:"Blackjack",bc:"Baccarat",jb:"Jacks or Better",hm:"Hold'em",rm:"Rummy",om:"Old Maid"};
+  const NM={ew:"Egyptian War",bj:"Blackjack",bc:"Baccarat",jb:"Jacks or Better",hm:"Hold'em",rm:"Rummy",om:"Old Maid",sp:"Speed",ch:"Cheat",gb:"Garbage",so:"Solitaire"};
   for(const k in g){const x=g[k];if(!x)continue;n+=x.n||0;w+=x.w||0;net+=x.net||0;if(!best||(x.n||0)>best.n)best={k,n:x.n||0};}
   let spark=`<div class="rec-empty"><svg viewBox="0 0 120 36" aria-hidden="true"><path d="M2 30 L22 24 L40 27 L60 14 L80 18 L100 8 L118 10" fill="none" stroke="rgba(247,203,77,.35)" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round"/></svg><span>Your chip graph starts after your first real game.</span></div>`;
   if(h.length>=2){const v=h.map(x=>x.c),mn=Math.min(...v),mx=Math.max(...v),sp=Math.max(1,mx-mn),W=300,H=64;
@@ -4610,7 +4756,7 @@ function profileScreen(){
     s.jbBest?tile("Best video poker hand",esc(JB_NAME[s.jbBest.k]),`Paid ${fmt(s.jbBest.win)}`):tile("Best video poker hand","–","Hit Jacks or better"),
     tile("Blackjack streak",s.bj.best?`${s.bj.best} ${s.bj.best===1?"win":"wins"}`:"–",s.bj.cur?`${s.bj.cur} going now`:"In a row"),
     s.slap?tile("Fastest slap",(s.slap/1000).toFixed(2)+" s","Egyptian War"):tile("Fastest slap","–","Slap a valid pile")];
-  const rows=[["ew","Egyptian War","wins"],["bj","Blackjack","hands"],["bc","Baccarat","hands"],["jb","Jacks or Better","hands"],["hm","Texas Hold'em","hands"],["rm","Rummy","wins"],["om","Old Maid","wins"]]
+  const rows=[["ew","Egyptian War","wins"],["bj","Blackjack","hands"],["bc","Baccarat","hands"],["jb","Jacks or Better","hands"],["hm","Texas Hold'em","hands"],["rm","Rummy","wins"],["om","Old Maid","wins"],["sp","Speed","wins"],["ch","Cheat","wins"],["gb","Garbage","wins"],["so","Solitaire","wins"]]
     .map(([k,n,u])=>{const x=g[k];return`<div class="grow"><span>${n}</span><span class="st2">${x?(u==="wins"?`${x.w} ${x.w===1?"win":"wins"} of ${x.n}`:`${x.n} ${x.n===1?"hand":"hands"}`):"Not played"}</span><b class="${x&&x.net>0?"up":x&&x.net<0?"down":""}">${x?money(x.net)||"0":"–"}</b></div>`;}).join("");
   const f=FX.get();
   const sw=(k,l)=>`<button class="switch" role="switch" aria-checked="${!!f[k]}" data-act="fx" data-k="${k}"><span>${l}</span><i></i></button>`;
@@ -4646,7 +4792,7 @@ const ONG={
   hm:{net:()=>HNET,mode:()=>APP.hm,join:()=>{APP.screen="hm-mode";hmJoin();},stop:()=>hmStop(),take:()=>hmTakeover()},
   rm:{net:()=>RNET,mode:()=>APP.rm,join:()=>{APP.screen="rm-mode";rmJoin();},stop:()=>rmStop(),take:()=>rmTakeover()},
   om:{net:()=>ONET,mode:()=>APP.om,join:()=>{APP.screen="om-mode";omJoin();},stop:()=>omStop(),take:()=>omTakeover()}};
-function curOnline(){for(const g of ["ew","bj","bc","hm","rm","om"]){const N=ONG[g].net();if(N.nr&&N.code)return{g,N,code:N.code,role:ONG[g].mode()};}return null;}
+function curOnline(){for(const g of Object.keys(ONG)){const N=ONG[g].net();if(N.nr&&N.code)return{g,N,code:N.code,role:ONG[g].mode()};}return null;}
 
 /* the host is gone: after 8 seconds the remaining player with the lowest id takes over, so the table keeps going */
 function hostSeen(g){const N=ONG[g].net();N.electAt=0;clearTimeout(N.electTimer);}
@@ -4754,14 +4900,14 @@ function joinTable(g,code){
   APP.joinCode=code;APP.err="";APP.sheet=null;ONG[g].join();
 }
 /* a page link ending in #join-bj-k7qf drops a friend straight into that table */
-const PENDING_JOIN=(()=>{try{const m=/^#join-(ew|bj|bc|hm|rm|om)-([a-z0-9]{4})$/.exec(location.hash);return m?{g:m[1],code:m[2]}:null;}catch(e){return null;}})();
+const PENDING_JOIN=(()=>{try{const m=/^#join-(ew|bj|bc|hm|rm|om|sp|ch|gb)-([a-z0-9]{4})$/.exec(location.hash);return m?{g:m[1],code:m[2]}:null;}catch(e){return null;}})();
 function pendingJoin(){
   if(!PENDING_JOIN||PENDING_JOIN.done)return;PENDING_JOIN.done=true;
   if(!(APP.myName||"").trim()){   // first visit: ask for a name before sitting down
-    APP.joinCode=PENDING_JOIN.code;APP.invited=PENDING_JOIN.g;APP.screen={ew:"mode",bj:"bj-mode",bc:"bc-mode",hm:"hm-mode",rm:"rm-mode",om:"om-mode"}[PENDING_JOIN.g];render();
+    APP.joinCode=PENDING_JOIN.code;APP.invited=PENDING_JOIN.g;APP.screen={ew:"mode",bj:"bj-mode",bc:"bc-mode",hm:"hm-mode",rm:"rm-mode",om:"om-mode",sp:"sp-mode",ch:"ch-mode",gb:"gb-mode"}[PENDING_JOIN.g];render();
     setTimeout(()=>{const i=document.getElementById("my-name");if(i)i.focus();},60);return;}
-  if(NET.room&&(!["hm","rm","om"].includes(PENDING_JOIN.g)||hasCrypto()))joinTable(PENDING_JOIN.g,PENDING_JOIN.code);
-  else{APP.joinCode=PENDING_JOIN.code;APP.screen={ew:"mode",bj:"bj-mode",bc:"bc-mode",hm:"hm-mode",rm:"rm-mode",om:"om-mode"}[PENDING_JOIN.g];render();}
+  if(NET.room&&(!["hm","rm","om","sp","ch"].includes(PENDING_JOIN.g)||hasCrypto()))joinTable(PENDING_JOIN.g,PENDING_JOIN.code);
+  else{APP.joinCode=PENDING_JOIN.code;APP.screen={ew:"mode",bj:"bj-mode",bc:"bc-mode",hm:"hm-mode",rm:"rm-mode",om:"om-mode",sp:"sp-mode",ch:"ch-mode",gb:"gb-mode"}[PENDING_JOIN.g];render();}
 }
 
 /* chat: a panel that stays open, emoji reactions that float over the table, short messages.
@@ -4923,7 +5069,7 @@ function inviteSheet(){
 }
 function onlineReady(){
   const r=NET.room;
-  const g={mode:"ew","bj-mode":"bj","bc-mode":"bc","hm-mode":"hm","rm-mode":"rm","om-mode":"om"}[APP.screen];
+  const g={mode:"ew","bj-mode":"bj","bc-mode":"bc","hm-mode":"hm","rm-mode":"rm","om-mode":"om","sp-mode":"sp","ch-mode":"ch","gb-mode":"gb"}[APP.screen];
   if(APP.invited&&APP.invited===g)return`<p class="note invited">You're invited to table <b>${esc(APP.joinCode.toUpperCase())}</b>. Type your name, then tap <b>Join</b>.</p>`;
   if(r)return`<p class="note ok-note"><span class="live"></span> Online is ready. <button class="link" data-act="invite">How to invite friends</button></p>`;
   return"";
@@ -4935,7 +5081,8 @@ async function goMain(){
   APP.sheet=null;clearTimeout(ewTT);ewTK="";
   prClear();clearTimeout(timer);clearTimeout(NET.searchTimer);clearTimeout(BNET.searchTimer);clearTimeout(CNET.searchTimer);clearTimeout(HNET.searchTimer);
   clearTimeout(RNET.searchTimer);clearTimeout(ONET.searchTimer);
-  const rooms=[NET.nr,BNET.nr,CNET.nr,HNET.nr,RNET.nr,ONET.nr].filter(Boolean);ONET.nr=null;ONET.host=null;omStop();HNET.nr=null;HNET.host=null;hmStop();RNET.nr=null;RNET.host=null;rmStop();
+  const rooms=[NET.nr,BNET.nr,CNET.nr,HNET.nr,RNET.nr,ONET.nr,...Object.values(XS).map(X=>X.N.nr)].filter(Boolean);
+  Object.values(XS).forEach(X=>{clearTimeout(X.N.searchTimer);X.N.nr=null;X.N.host=null;X.N.code="";X.mode="off";xStop(X.k);});ONET.nr=null;ONET.host=null;omStop();HNET.nr=null;HNET.host=null;hmStop();RNET.nr=null;RNET.host=null;rmStop();
   if(NET.nr&&APP.mode==="host")store.del("ew-host");
   NET.nr=null;NET.host=null;NET.started=false;BNET.nr=null;BNET.host=null;CNET.nr=null;CNET.host=null;
   G=null;V=null;bjStop();bcStop();J=null;
@@ -4946,11 +5093,13 @@ async function goMain(){
 const MAIN_BTN=(note)=>`<button class="btn ghost menu-home" data-act="hub">‹ Back to menu${note?` <span class="st2" style="display:inline">· ${note}</span>`:""}</button>`;
 
 /* ================= Practice vs bots ================= */
-const BOT_NAMES=["Rook","Vega","Dot"];
+const BOT_NAMES=["Rook","Vega","Dot","Jinx","Max"];
 const PR={game:"ew",diff:"medium",bots:2,coach:true,chips:{},timers:[],keys:{}};
 const PR_SOLO=new Set(["bj","bc","jb"]);   // house games: practice is just you, free chips, and the coach
 const PR_GAMES={ew:"Egyptian War",bj:"Blackjack",bc:"Baccarat",jb:"Jacks or Better",hm:"Texas Hold'em",rm:"Rummy",om:"Old Maid"};
 const PR_DIFF={
+  sp:{easy:"Slow and steady",medium:"Quick, but you can beat it",hard:"Lightning fast"},
+  ch:{easy:"Bluffs a lot and rarely calls",medium:"Calls when a claim looks fishy",hard:"Bluffs smart and calls sharply"},
   ew:{easy:"Slow to slap and misses a lot",medium:"Quick hands, sometimes misses",hard:"Lightning slaps, never misses"},
   bj:{easy:"Plays like a beginner",medium:"Mostly by the book",hard:"Perfect basic strategy"},
   bc:{easy:"Bets on hunches and loves Tie",medium:"Picks Player or Banker",hard:"Always backs the Banker"},
@@ -4965,8 +5114,10 @@ function prTimer(f,ms){const t=setTimeout(()=>{PR.timers=PR.timers.filter(x=>x!=
 function prClear(){PR.timers.forEach(clearTimeout);PR.timers=[];PR.keys={};}
 function prStart(){
   clearTimeout(ewTT);ewTK="";prClear();PR.chips={};clearTimeout(timer);bjStop();bcStop();hmStop();rmStop();omStop();G=null;V=null;
-  const you=(APP.myName.trim()||"You").slice(0,14),bots=PR_SOLO.has(PR.game)?[]:BOT_NAMES.slice(0,PR.bots).map(n=>"Bot "+n);
+  Object.values(XS).forEach(X=>{if(X.mode==="practice")xStop(X.k);});
+  const you=(APP.myName.trim()||"You").slice(0,14),bots=PR_SOLO.has(PR.game)?[]:BOT_NAMES.slice(0,prBotCount(PR.game)).map(n=>"Bot "+n);
   APP.sheet=null;
+  if(xIs(PR.game)){xPractice(PR.game,you,bots);return;}
   if(PR.game==="ew"){
     APP.mode="practice";NET.mySeat=0;G=newGame([you,...bots],0);G.bots=[false,...bots.map(()=>true)];
     prevV=null;APP.screen="game";changed();
@@ -4988,7 +5139,7 @@ function prStart(){
 }
 function prExit(){
   clearTimeout(ewTT);ewTK="";prClear();clearTimeout(timer);bjStop();bcStop();hmStop();G=null;V=null;J=null;
-  rmStop();omStop();APP.mode="local";APP.bj="local";APP.bc="local";APP.jb="mine";APP.hm="local";APP.rm="off";APP.om="off";APP.screen="practice";APP.sheet=null;render();
+  rmStop();omStop();Object.values(XS).forEach(X=>{if(X.mode==="practice"){xStop(X.k);X.mode="off";}});APP.mode="local";APP.bj="local";APP.bc="local";APP.jb="mine";APP.hm="local";APP.rm="off";APP.om="off";APP.screen="practice";APP.sheet=null;render();
 }
 function prResetChips(){
   PR.chips={};
@@ -4997,8 +5148,11 @@ function prResetChips(){
   else if(APP.hm==="practice"&&H)hmChanged();
   else if(APP.rm==="practice"&&RM)rmChanged();
   else if(APP.om==="practice"&&OM)omChanged();
+  else if(xIs(APP.screen)&&XS[APP.screen].mode==="practice")xChanged(APP.screen);
   else render();
 }
+// Speed is always one bot; Cheat needs at least two; everything else allows one to three
+function prBotCount(g){if(g==="sp")return 1;if(g==="ch")return Math.min(5,Math.max(2,PR.bots));return Math.min(3,Math.max(1,PR.bots));}
 function practiceScreen(){
   const g=PR.game;
   const seg=(act,cur,opts)=>`<div class="count-pick">${opts.map(([k,l])=>`<button data-act="${act}" data-v="${k}" aria-pressed="${cur===k}">${l}</button>`).join("")}</div>`;
@@ -5006,16 +5160,16 @@ function practiceScreen(){
     <button class="back" data-act="${g==="ew"?"open-war":"open-"+g}">‹ ${esc(PR_GAMES[g])}</button>
     <div><div class="eyebrow">${esc(PR_GAMES[g])} · practice</div><h1>Play against bots</h1>
     <p>Play solo or learn the game. Practice uses its own chips, so nothing you win or lose here touches your real chips.</p></div>
-    ${g==="om"?`<p class="note">Old Maid is all luck, so there's no bot difficulty to pick.</p>`:`<div class="label">Bot difficulty</div>${seg("pr-diff",PR.diff,[["easy","Easy"],["medium","Medium"],["hard","Hard"]])}
-    <p class="note">${PR_DIFF[g][PR.diff]}</p>`}
-    <div class="label">${g==="jb"?"Bots at the next machines":"Bots at the table"}</div>${seg("pr-bots",String(PR.bots),[["1","1"],["2","2"],["3","3"]])}
+    ${g==="om"||g==="gb"?`<p class="note">${g==="om"?"Old Maid is all luck, so there's no bot difficulty to pick.":"Garbage bots always make the sensible play, so there's no difficulty to pick."}</p>`:`<div class="label">Bot difficulty</div>${seg("pr-diff",PR.diff,[["easy","Easy"],["medium","Medium"],["hard","Hard"]])}
+    <p class="note">${(PR_DIFF[g]||{})[PR.diff]||""}</p>`}
+    ${g==="sp"?`<p class="note">Speed is head to head: you against one bot.</p>`:g==="ch"?`<div class="label">Bots at the table</div>${seg("pr-bots",String(prBotCount(g)),[["2","2"],["3","3"],["4","4"],["5","5"]])}`:`<div class="label">${g==="jb"?"Bots at the next machines":"Bots at the table"}</div>${seg("pr-bots",String(prBotCount(g)),[["1","1"],["2","2"],["3","3"]])}`}
     <button class="mode" data-act="pr-coach" aria-pressed="${PR.coach}"><span class="ic">?</span><span class="meta"><strong>Coach tips: ${PR.coach?"On":"Off"}</strong><span>${PR.coach?"Shows what to do and why while you play":"Tap to turn on tips while you learn"}</span></span></button>
     <button class="btn gold" data-act="pr-start">Start practice</button>
   </div></div>`;
 }
 function practiceMenu(extra=""){
   return`<div class="overlay" data-act="close-bg"><div class="sheet">
-    <div class="eyebrow">Practice · ${esc(PR_GAMES[PR.game])}${PR_SOLO.has(PR.game)||PR.game==="om"?"":` · ${PR.diff} bots`}</div><h2>Menu</h2>
+    <div class="eyebrow">Practice · ${esc(PR_GAMES[PR.game])}${PR_SOLO.has(PR.game)||PR.game==="om"||PR.game==="gb"?"":` · ${PR.diff} ${PR.game==="sp"?"bot":"bots"}`}</div><h2>Menu</h2>
     <button class="btn gold" data-act="close">Back to the table</button>
     ${MAIN_BTN()}
     <button class="btn ghost" data-act="${PR.game==="ew"?"rules":PR.game+"-rules"}">Rules</button>
@@ -5026,6 +5180,853 @@ function practiceMenu(extra=""){
     <p class="note">Practice chips are separate from your real chips.</p>
   </div></div>`;
 }
+
+/* ================= Speed, Cheat and Garbage: one shared engine for online tables, practice bots and buy-in pots ================= */
+const XD={},XS={};
+const xNetNew=()=>({nr:null,code:"",info:{},seen:{},host:null,hostGone:false,connected:true,searchTimer:null,ec:null,hostKey:null,hostPub:null,
+  my:{n:0,acts:[],nonce:rid(6),sit:false},priv:null,privGid:null,privEh:"",pend:"",goneKey:"",hs:0});
+function xReg(k,def){
+  XD[k]=def;XS[k]={k,mode:"off",S:null,V:null,PV:null,N:xNetNew(),tt:null,tk:"",buy:def.buyins[1],bots:{},ui:{sel:[]}};
+  ONG[k]={net:()=>XS[k].N,mode:()=>XS[k].mode,join:()=>{APP.screen=k+"-mode";xJoin(k);},stop:()=>xStop(k),take:()=>xTakeover(k)};
+  PR_GAMES[k]=def.name;GAME_NAMES[k]=def.name;
+}
+const xIs=k=>!!XD[k];
+function xPlayer(S,name,cid,bot){const used=new Set(S.players.map(p=>p.color));
+  return{name,cid:cid||null,bot:!!bot,color:COLORS.find(c=>!used.has(c))||COLORS[0],inRound:false,sit:false,gone:false,net:null};}
+function xNewTable(k,seats,buyIn){
+  const X=XS[k];clearTimeout(X.tt);X.tk="";
+  X.S={k,seq:0,gid:rid(8),phase:"wait",players:[],buyIn:buyIn|0,actN:0,toast:null,turnAt:null,turnMs:null,winner:-1,eh:{},ehSig:{},opt:Object.assign({},XD[k].opt||{})};
+  seats.forEach(s=>X.S.players.push(xPlayer(X.S,s.name,s.cid,s.bot)));
+}
+function xChips(k,i){const X=XS[k],p=X.S.players[i];if(X.mode==="practice")return prChips(p.name);if(p.cid===CID)return wallet.get();
+  const f=X.N.info[p.cid];return f&&Number.isFinite(f.ch)?f.ch:START_CHIPS;}
+function xEligible(k,i){const S=XS[k].S,p=S.players[i];return!p.sit&&!p.gone&&xChips(k,i)>=S.buyIn;}
+function xElig(k){const S=XS[k].S;return S.players.map((_,i)=>i).filter(i=>xEligible(k,i)).slice(0,XD[k].max);}
+function xCanDeal(k){const S=XS[k].S;return!!S&&S.phase!=="play"&&xElig(k).length>=XD[k].min;}
+function xStart(k){
+  const X=XS[k],S=X.S;if(!xCanDeal(k))return;
+  const el=xElig(k);Object.assign(S,{gid:rid(8),phase:"play",actN:0,toast:null,winner:-1,eh:{},ehSig:{}});
+  S.players.forEach((p,i)=>{p.inRound=el.includes(i);p.net=null;});
+  X.ui={sel:[]};XD[k].start(S,el);xChanged(k);
+}
+// one winner takes the whole pot
+function xWin(S,w){
+  const k=S.k;S.phase="done";S.winner=w;
+  const inR=S.players.map((_,i)=>i).filter(i=>S.players[i].inRound),pot=S.buyIn*inR.length;
+  inR.forEach(i=>S.players[i].net=i===w?pot-S.buyIn:-S.buyIn);
+  if(XS[k].mode==="host")inR.forEach(i=>{const p=S.players[i];if(p.cid&&p.cid!==CID){const f=XS[k].N.info[p.cid]||(XS[k].N.info[p.cid]={});f.ch=(Number.isFinite(f.ch)?f.ch:START_CHIPS)+p.net;}});
+}
+const xInR=S=>S.players.map((_,i)=>i).filter(i=>S.players[i].inRound);
+function xNextIn(S,from){const n=S.players.length;for(let d=1;d<=n;d++){const j=(from+d)%n;if(S.players[j].inRound)return j;}return from;}
+function xAct(k,i,a,o){
+  const X=XS[k],S=X.S;if(!S||S.phase!=="play"||!(i>=0)||!S.players[i]||!S.players[i].inRound)return false;
+  const ok=XD[k].act(S,i,a,o||{});if(ok){S.actN++;xChanged(k);}return!!ok;
+}
+function xTimer(k){
+  const X=XS[k],S=X.S;if(!S||X.mode==="client")return;
+  const t=S.phase==="play"&&XD[k].timer?XD[k].timer(S):null;
+  if(!t){clearTimeout(X.tt);X.tk="";S.turnAt=null;S.turnMs=null;return;}
+  if(t.key===X.tk)return;
+  X.tk=t.key;clearTimeout(X.tt);S.turnAt=t.clock?Date.now():null;S.turnMs=t.clock?t.ms:null;
+  X.tt=setTimeout(()=>{if(X.S!==S||X.tk!==t.key||S.phase!=="play")return;X.tk="";t.fn(S);S.actN++;xChanged(k);},Math.max(0,t.ms));
+}
+function xView(k){
+  const X=XS[k],S=X.S,D=XD[k];S.seq++;
+  const online=X.mode==="host",done=S.phase==="done",play=S.phase!=="wait";
+  return Object.assign({seq:S.seq,gid:S.gid,ph:S.phase,buyIn:S.buyIn,actN:S.actN,toast:S.toast,winner:S.winner,opt:S.opt,
+    tl:S.turnAt?Math.max(0,S.turnAt+(S.turnMs||TURN_MS)-Date.now()):null},play?D.pub(S):{},{
+    pl:S.players.map((p,i)=>{
+      const o={n:p.name,c:p.cid,col:p.color,bot:p.bot?1:0,in:p.inRound?1:0,sit:p.sit?1:0,gone:p.gone?1:0,
+        low:!p.inRound&&xChips(k,i)<S.buyIn?1:0,ch:xChips(k,i),net:p.net};
+      if(play&&p.inRound){Object.assign(o,D.pubP(S,i));
+        if(D.priv){if(!online||done)o.pv=D.priv(S,i);else if(p.cid&&p.cid!==CID)o.eh=S.eh[p.cid]||null;}}
+      return o;})});
+}
+function xChanged(k){
+  const X=XS[k];if(!X.S)return;
+  xTimer(k);X.V=xView(k);
+  if(X.mode==="host"&&X.N.nr){
+    X.N.nr.presence({role:"host",game:k,hs:X.N.hs,code:X.N.code,cid:CID,pub:X.N.ec&&X.N.ec.pub,v:X.V}).catch(()=>{});
+    lobbyAnnounce({g:k,code:X.N.code,name:myName(),n:X.S.players.length});if(XD[k].priv)xEncryptAll(k);}
+  render();xBotTick(k);xGoneTick(k);
+}
+const xEnc={};
+async function xEncryptAll(k){
+  const st=xEnc[k]||(xEnc[k]={busy:false,again:false});
+  if(st.busy){st.again=true;return;}
+  st.busy=true;let any=false;const X=XS[k],S=X.S;
+  try{
+    if(S&&S.phase==="play"){const gid=S.gid;
+      for(let i=0;i<S.players.length;i++){const p=S.players[i];
+        if(!p.cid||p.cid===CID||!p.inRound)continue;const f=X.N.info[p.cid];if(!f||!f.key)continue;
+        const pv=XD[k].priv(S,i),sig=gid+JSON.stringify(pv);if(S.ehSig[p.cid]===sig)continue;
+        const s=await aesEnc(f.key,{g:gid,pv});
+        if(X.S===S&&S.gid===gid&&gid+JSON.stringify(XD[k].priv(S,i))===sig){S.eh[p.cid]=s;S.ehSig[p.cid]=sig;any=true;}
+      }}
+  }catch(e){}
+  st.busy=false;
+  if(any){X.V=xView(k);if(X.N.nr)X.N.nr.presence({v:X.V}).catch(()=>{});if(st.again){st.again=false;xEncryptAll(k);}}
+  else if(st.again){st.again=false;xEncryptAll(k);}
+}
+function xSettle(k){
+  const X=XS[k],v=X.V;if(!v||v.ph!=="done"||settled(v.gid))return;
+  markSettled(v.gid);
+  const mi=X.mode==="practice"?0:v.pl.findIndex(p=>p.c===CID),me=v.pl[mi];
+  if(X.mode==="practice"){v.pl.forEach(p=>{if(p.in&&p.net)prSet(p.n,prChips(p.n)+p.net);});if(me&&me.in)gameDone(k,"pr",{gid:v.gid,win:v.winner===0});}
+  else{if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand(k,me.net||0,v.winner===mi);
+      gameDone(k,"on",{gid:v.gid,win:v.winner===mi,net:me.net||0,with:v.pl.filter(q=>q!==me&&!q.bot&&q.n).map(q=>q.n)});}
+    if(X.mode==="client")X.N.nr?.presence({chips:wallet.get()}).catch(()=>{});}
+  if(me&&me.in&&v.winner===mi)celebrate(k+v.gid,XD[k].winTitle||"You win!",v.buyIn&&me.net>0?`${money(me.net)} chips`:XD[k].winSub||"");
+  if(X.mode!=="client")setTimeout(()=>xChanged(k),0);
+}
+function xStop(k){const X=XS[k];clearTimeout(X.tt);X.tk="";X.S=null;X.V=null;X.PV=null;X.bots={};X.ui={sel:[]};X.N.priv=null;X.N.privGid=null;X.N.privEh="";if(X.mode!=="host"&&X.mode!=="client")X.mode="off";}
+function xBotTick(k){
+  const X=XS[k],S=X.S,D=XD[k];if(X.mode!=="practice"||!S||S.phase!=="play")return;
+  S.players.forEach((p,i)=>{
+    if(!p.bot||!p.inRound||X.bots[i])return;const ms=D.botDelay(S,i,PR.diff);if(ms==null)return;
+    X.bots[i]=1;prTimer(()=>{X.bots[i]=0;if(X.S!==S||S.phase!=="play")return;const m=D.bot(S,i,PR.diff);if(m&&xAct(k,i,m.a,m))return;
+      setTimeout(()=>xBotTick(k),0);},ms);
+  });
+}
+function xGoneTick(k){
+  const X=XS[k],S=X.S,D=XD[k];if(X.mode!=="host"||!S||S.phase!=="play"||!D.actor)return;
+  const i=D.actor(S);if(i<0||!S.players[i]||!S.players[i].gone)return;
+  const key=S.gid+":"+S.actN;if(X.N.goneKey===key)return;X.N.goneKey=key;
+  setTimeout(()=>{if(X.S===S&&S.phase==="play"&&D.actor(S)===i&&S.players[i].gone){D.auto(S,i);S.actN++;xChanged(k);}},2000);
+}
+function xPractice(k,you,bots){
+  const X=XS[k];xStop(k);X.mode="practice";X.bots={};
+  xNewTable(k,[{name:you},...bots.map(n=>({name:n,bot:true}))],XD[k].buyins[1]||0);X.PV=null;APP.screen=k;xStart(k);
+}
+
+/* online */
+async function xHost(k){
+  const X=XS[k],N=X.N;if(!NET.room||(XD[k].priv&&!hasCrypto()))return;
+  APP.err="";const code=rid(4);let nr;
+  try{if(XD[k].priv)N.ec=await ecKeys();nr=await NET.room.join(k+"-"+code);}catch(e){APP.err="Couldn't open a table. Try again in a moment.";render();return;}
+  N.nr=nr;X.mode="host";N.code=code;N.info={};N.seen={};N.connected=true;N.hs=Date.now();
+  xNewTable(k,[{name:myName(),cid:CID}],X.buy);
+  nr.onConnection(c=>{N.connected=c;render();},()=>{N.connected=false;render();});
+  N.unsub=nr.onPeers(ch=>xOnPeersHost(k,ch));
+  X.PV=null;APP.screen=k;APP.sheet=null;xChanged(k);
+}
+async function xDerive(k,cid){
+  const N=XS[k].N,f=N.info[cid];if(!f||!f.pub||!N.ec)return;const pub=f.pub;
+  try{const key=await ecShared(N.ec.kp,pub);if(f.pub===pub){f.key=key;xEncryptAll(k);}}catch(e){}
+}
+function xOnPeersHost(k,ch){
+  const X=XS[k],N=X.N,S=X.S;if(!S||dupHost(k,ch))return;
+  let dirty=false;const here=new Set();
+  for(const peer of ch.peers){
+    if(peer.sameTab)continue;const pr=peer.presence||{};
+    if(typeof pr.cid!=="string"||pr.cid===CID||pr.role==="host"||pr.game!==k)continue;
+    here.add(pr.cid);const name=String(pr.name||"Player").slice(0,14);
+    const f=N.info[pr.cid]||(N.info[pr.cid]={ch:START_CHIPS,rep:null});
+    if(Number.isFinite(pr.chips)&&pr.chips!==f.rep){f.rep=pr.chips;f.ch=pr.chips;dirty=true;}
+    if(XD[k].priv&&typeof pr.pub==="string"&&pr.pub!==f.pub){f.pub=pr.pub;f.key=null;xDerive(k,pr.cid);}
+    let i=S.players.findIndex(x=>x.cid===pr.cid);
+    if(i<0&&S.players.length<XD[k].seats){S.players.push(xPlayer(S,name,pr.cid));i=S.players.length-1;dirty=true;}
+    if(i<0)continue;
+    const pl=S.players[i];
+    if(pl.name!==name){pl.name=name;dirty=true;}
+    if(pl.sit!==!!pr.sit){pl.sit=!!pr.sit;dirty=true;}
+    if(pl.gone){pl.gone=false;dirty=true;}
+    const key=pr.cid+":"+pr.nonce,seen=N.seen[key]||0;let max=seen;
+    if(Array.isArray(pr.acts))for(const a of pr.acts){
+      if(!a||!(a.n>seen))continue;max=Math.max(max,a.n);
+      if(a.g!==S.gid||typeof a.a!=="string")continue;
+      xAct(k,i,a.a,a);
+    }
+    N.seen[key]=max;
+  }
+  S.players.forEach(p=>{if(p.cid&&p.cid!==CID&&!here.has(p.cid)&&!p.gone){p.gone=true;dirty=true;}});
+  if(S.phase!=="play"){const b=S.players.length;S.players=S.players.filter(p=>!p.gone);if(S.players.length!==b)dirty=true;}
+  if(dirty)xChanged(k);
+}
+function xTakeover(k){
+  const X=XS[k],N=X.N,last=N.host&&N.host.v;try{N.unsub&&N.unsub();}catch(e){}
+  X.mode="host";N.hs=Date.now();N.info={};N.seen={};N.hostGone=false;
+  xNewTable(k,takeoverSeats(last&&last.pl),last&&Number.isFinite(last.buyIn)?last.buyIn:X.buy);
+  if(last&&last.opt)X.S.opt=Object.assign(X.S.opt,last.opt);
+  X.S.toast={id:rid(5),text:last&&last.ph==="play"?"The host left. You're hosting now. That game was canceled and no chips changed.":"The host left. You're hosting now."};
+  N.unsub=N.nr.onPeers(ch=>xOnPeersHost(k,ch));xChanged(k);
+}
+async function xJoin(k){
+  const X=XS[k],N=X.N,code=APP.joinCode.trim().toLowerCase();
+  if(!/^[a-z0-9]{4}$/.test(code)){APP.err="Enter the 4-character code from the host's screen.";render();return;}
+  if(!NET.room||(XD[k].priv&&!hasCrypto()))return;
+  APP.err="";let nr;
+  try{if(XD[k].priv)N.ec=await ecKeys();nr=await NET.room.join(k+"-"+code);}catch(e){APP.err="Couldn't reach that table. Check the code and try again.";render();return;}
+  N.nr=nr;X.mode="client";N.code=code;N.host=null;N.hostGone=false;N.connected=true;N.hostKey=null;N.hostPub=null;
+  X.V=null;X.PV=null;X.S=null;N.priv=null;N.privGid=null;N.privEh="";N.pend="";X.ui={sel:[]};
+  N.my={n:0,acts:[],nonce:rid(6),sit:false};
+  nr.presence({cid:CID,game:k,name:myName(),chips:wallet.get(),pub:N.ec?N.ec.pub:null,sit:false,nonce:N.my.nonce,acts:[]}).catch(()=>{});
+  nr.onConnection(c=>{N.connected=c;render();},()=>{N.connected=false;render();});
+  N.unsub=nr.onPeers(ch=>xOnPeersClient(k,ch));
+  APP.screen=k;APP.sheet=null;
+  clearTimeout(N.searchTimer);N.searchTimer=setTimeout(()=>{if(!N.host){N.hostGone=true;render();}},6000);
+  render();
+}
+async function xOnPeersClient(k,ch){
+  const X=XS[k],N=X.N;
+  const h=ch.peers.find(p=>p.presence&&p.presence.role==="host"&&p.presence.game===k&&p.presence.code===N.code);
+  if(!h){if(N.host){N.hostGone=true;hostMissing(k);render();}return;}
+  N.hostGone=false;hostSeen(k);N.host=h.presence;
+  const v=h.presence.v;if(v&&(!X.V||v.seq!==X.V.seq||v.gid!==X.V.gid)){X.V=v;render();}
+  if(XD[k].priv&&typeof h.presence.pub==="string"&&h.presence.pub!==N.hostPub){
+    N.hostPub=h.presence.pub;N.hostKey=null;N.privEh="";
+    try{N.hostKey=await ecShared(N.ec.kp,N.hostPub);}catch(e){}}
+  if(XD[k].priv)xDecrypt(k);
+}
+async function xDecrypt(k){
+  const X=XS[k],N=X.N,v=X.V;if(!v||!N.hostKey)return;
+  const me=v.pl.find(p=>p.c===CID);if(!me||!me.eh||me.eh===N.privEh)return;
+  const s=me.eh;
+  try{const o=await aesDec(N.hostKey,s);if(X.V&&o.g===X.V.gid){N.privEh=s;N.priv=o.pv;N.privGid=o.g;render();}}catch(e){}
+}
+function xSend(k,a,o){
+  const X=XS[k],N=X.N,v=X.V;if(!v||v.ph!=="play")return;
+  const n=++N.my.n;
+  N.my.acts=[...N.my.acts.slice(-11),{n,a,g:v.gid,k:v.actN,...o}];N.pend=v.gid+":"+v.actN;
+  N.nr?.presence({acts:N.my.acts}).catch(()=>{});render();
+}
+function xToggleSit(k){
+  const X=XS[k];
+  if(X.mode==="client"){X.N.my.sit=!X.N.my.sit;X.N.nr?.presence({sit:X.N.my.sit}).catch(()=>{});render();return;}
+  const i=X.mode==="host"?X.S.players.findIndex(p=>p.cid===CID):-1;if(i<0)return;X.S.players[i].sit=!X.S.players[i].sit;xChanged(k);
+}
+async function xLeave(k){
+  const X=XS[k],N=X.N;
+  lobbyAnnounce(null);if(curOnline())forgetTable();
+  clearTimeout(N.searchTimer);const nr=N.nr;X.mode="off";xStop(k);
+  try{await nr?.leave();}catch(e){}
+  N.nr=null;N.host=null;N.code="";APP.screen=k+"-mode";APP.sheet=null;render();
+}
+const xMine=(k,v)=>XS[k].mode==="practice"?0:v?v.pl.findIndex(p=>p.c===CID):-1;
+function xPriv(k,v,mine){
+  const X=XS[k];if(!v||mine<0||!v.pl[mine]||!v.pl[mine].in)return null;
+  if(v.pl[mine].pv)return v.pl[mine].pv;
+  if(X.mode==="host"&&X.S&&XD[k].priv)return XD[k].priv(X.S,mine);
+  if(X.mode==="client")return X.N.privGid===v.gid?X.N.priv:null;
+  return null;
+}
+function xDo(k,a,o){
+  const X=XS[k],v=X.V;if(!v||v.ph!=="play")return false;
+  if(X.mode==="client"){xSend(k,a,o||{});return true;}
+  return xAct(k,xMine(k,v),a,o||{});
+}
+
+/* screens shared by the three games */
+function xModeScreen(k){
+  const D=XD[k],X=XS[k],r=NET.room,cr=!D.priv||hasCrypto(),ok=r&&cr;
+  const online=!cr?`<p class="note warn">Online ${esc(D.name)} needs a browser that can keep cards private. Try the latest Chrome or Safari.</p>`
+    :r?"":(r===undefined?`<p class="note">Checking online play…</p>`:`<p class="note warn">${OFFLINE_MSG}</p>`);
+  return`<div class="screen"><div class="wrap">
+    <button class="back" data-act="hub">‹ Back to menu</button>
+    <div><div class="eyebrow">Choose how to play</div><h1>${esc(D.name)}</h1><p class="tagline">${esc(D.tag)}</p></div>
+    <button class="mode" data-act="pr-open" data-g="${k}"><span class="ic">?</span><span class="meta"><strong>Practice vs ${D.max===2?"a bot":"bots"}</strong><span>Play solo or learn the game. Free.</span></span></button>
+    <div class="label">Online · each on your own phone</div>${onlineReady()}
+    ${walletHTML()}
+    <label class="field"><input class="txt" id="my-name" data-bind="myName" maxlength="14" placeholder="Your name" value="${esc(APP.myName)}" aria-label="Your name"></label>
+    <div class="betrow"><span class="label">Buy-in when you host</span><div class="count-pick" style="flex:0 1 240px">${D.buyins.map(b=>`<button data-act="x-buy" data-g="${k}" data-v="${b}" aria-pressed="${X.buy===b}">${b||"Free"}</button>`).join("")}</div></div>
+    <button class="mode" data-act="x-host" data-g="${k}" ${ok?"":"disabled"}><span class="ic">+</span><span class="meta"><strong>Open a table</strong><span>Get a code to share with friends</span></span></button>
+    <div class="row" style="flex-wrap:nowrap">
+      <input class="txt code" id="join-code" data-bind="joinCode" maxlength="4" placeholder="CODE" autocomplete="off" value="${esc(APP.joinCode.toUpperCase())}" aria-label="Table code">
+      <button class="btn gold" data-act="x-join" data-g="${k}" ${ok?"":"disabled"}>Join</button>
+    </div>
+    ${APP.err?`<p class="note warn">${esc(APP.err)}</p>`:""}
+    ${online}
+    <button class="btn ghost" data-act="${k}-rules">Rules</button>
+  </div></div>`;
+}
+function xSeat(k,v,i,mine){
+  const p=v.pl[i],D=XD[k],info=v.ph!=="wait"&&p.in?D.seat(v,i,mine):{st:"",line:"",turn:false};
+  const st=p.gone?"Disconnected":p.sit?"Sitting out":p.low?"Out of chips":!p.in&&v.ph==="play"?"Next game":v.ph==="done"&&i===v.winner?"Winner!":info.st||"";
+  const net=v.ph==="done"&&p.in&&p.net?`<span class="res ${p.net>0?"win":"lose"}" style="margin-left:0">${money(p.net)}</span>`:"";
+  const turn=info.turn&&v.ph==="play";
+  return`<div class="hseat2 ${turn?"turn":""} ${(!p.in&&v.ph!=="wait")?"fold":""} ${v.ph==="done"&&i===v.winner?"xwin":""}" style="--pc:${p.col}" data-seat="${i}">
+    <div class="ringwrap">${turn&&v.tl!=null?ringHTML(v.gid+":"+v.actN+":"+i,v.tl):""}${avatarHTML(p.n,p.col,44,p.c)}${turn&&v.tl!=null?clockHTML(v.gid+":"+v.actN+":"+i,v.tl):""}</div>
+    <span class="nm">${esc(p.n)}</span><span class="st2 ${turn?"thinking":""}">${st}</span>
+    ${v.ph!=="wait"&&p.in?info.line||"":`<span class="chip">${num(p.ch)}</span>`}${net}
+  </div>`;
+}
+function xWaitPanel(k,v,mine){
+  const X=XS[k],D=XD[k],mode=X.mode,host=mode!=="client",online=mode==="host"||mode==="client";
+  let res="";
+  if(v.ph==="done"){
+    const w=v.winner>=0?v.pl[v.winner]:null;
+    if(w)res+=`<div class="betrow"><span><b>${w===v.pl[mine]?"You":esc(w.n)}</b> ${w===v.pl[mine]?"win":"wins"}${v.buyIn?` the pot`:""}</span>${v.buyIn&&w.net?`<span class="delta up">${money(w.net)}</span>`:""}</div>`;
+    if(D.results)res+=D.results(v,mine);
+    const me=mine>=0?v.pl[mine]:null;
+    if(me&&me.in&&v.buyIn&&me.net&&v.winner!==mine)res+=`<div class="betrow"><span>Your result</span><span class="delta down" style="font-size:22px">${money(me.net)}</span></div>`;
+  }
+  const can=host&&xCanDeal(k),need=D.min===D.max?`Need exactly ${D.min} players with chips`:`Need ${D.min} players with chips`;
+  const meSit=mode==="client"?X.N.my.sit:mode==="host"&&mine>=0?!!v.pl[mine].sit:false;
+  return`${res}
+    ${host?`<div class="betrow"><span class="label">Buy-in</span><div class="count-pick" style="flex:0 1 240px">${D.buyins.map(b=>`<button data-act="x-tbuy" data-g="${k}" data-v="${b}" aria-pressed="${v.buyIn===b}">${b||"Free"}</button>`).join("")}</div></div>`
+      :`<p class="note">Buy-in <span class="chip">${fmt(v.buyIn)}</span> each · winner takes the pot</p>`}
+    ${D.waitExtra?D.waitExtra(v,host):""}
+    ${host?`<button class="btn gold" data-act="x-deal" data-g="${k}" ${can?"":"disabled"}>${can?(v.ph==="done"?"Play again":"Deal"):mode==="practice"?"Not enough chips · reset from ≡":need}</button>`
+      :`<p class="note" style="text-align:center">Waiting for the host to deal.</p>`}
+    ${online?`<button class="btn ghost" data-act="x-sit" data-g="${k}">${meSit?"Sit back in":"Sit out next game"}</button>${rulesLink(k+"-rules",D.name)}`:""}`;
+}
+function xTable(k){
+  const X=XS[k],v=X.V,D=XD[k],mode=X.mode,online=mode==="host"||mode==="client";
+  if(!v)return`<div class="screen"><div class="wrap">
+    <button class="back" data-act="x-leave" data-g="${k}">‹ Leave</button>
+    <div><div class="eyebrow">${esc(D.name)} · online</div><h1>Table ${esc(X.N.code.toUpperCase())}</h1></div>
+    <p>${X.N.hostGone?"No table with this code yet. Check the code with the host.":"Looking for the table…"}</p></div></div>`;
+  const mine=xMine(k,v),priv=xPriv(k,v,mine);
+  const n=v.pl.length,order=[];for(let d=1;d<=n;d++){const i=((mine<0?-1:mine)+d)%n;if(i!==mine)order.push(i);}
+  const pv=X.PV;
+  if(v.buyIn){const pot=VW+".potspot";
+    if(v.ph==="play"&&(!pv||pv.gid!==v.gid))v.pl.forEach((p,i)=>{if(p.in)chipFly(seatSel(i,mine),pot,v.buyIn,{delay:i*90});});
+    if(pv&&pv.gid===v.gid&&pv.ph==="play"&&v.ph==="done"&&v.winner>=0)chipFly(pot,seatSel(v.winner,mine),v.buyIn*v.pl.filter(p=>p.in).length,{delay:500});}
+  if(pv&&pv.gid===v.gid&&pv.actN!==v.actN)FXQ.card=true;
+  const body=v.ph==="wait"?`<div class="msg">${mode==="client"?"Waiting for the host to deal":"Ready to deal"}</div>`:D.center(v,mine,priv,X);
+  return`<div id="${k}" class="xtab">
+    <div class="bj-top"><span class="eyebrow">${esc(D.name)}</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(X.N.code.toUpperCase())}, invite friends">${esc(X.N.code.toUpperCase())}</button>`:`<span class="codepill">Practice</span>`}
+      ${online?netStatus():""}<span class="shoe potspot">${v.buyIn?`Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}`:"Free play"}</span>${rulesBtn(k+"-rules")}${chatBtn()}<button class="menu-btn2" data-act="x-menu" data-g="${k}" aria-label="Menu">≡</button></div>
+    <div class="hseats">${order.map(i=>xSeat(k,v,i,mine)).join("")}</div>
+    <div class="rmcenter xcenter">${body}<div class="toast">${toastText(v)}</div></div>
+    <div class="bj-bar">${v.ph==="play"?(mine>=0&&v.pl[mine].in?D.panel(v,mine,priv,X):`<p class="note" style="text-align:center">You're watching this game.</p>`):xWaitPanel(k,v,mine)}</div></div>`;
+}
+function xMenuSheet(k){
+  const X=XS[k],D=XD[k];
+  if(X.mode==="practice")return practiceMenu(`<button class="btn ghost" data-act="pr-reset">Reset practice chips to ${START_CHIPS}</button>`);
+  const m=X.mode;
+  return`<div class="overlay" data-act="close-bg"><div class="sheet">
+    <h2>${esc(D.name)}</h2>
+    <button class="btn gold" data-act="close">Back to the table</button>
+    ${MAIN_BTN(m==="host"?"closes the table":"leaves the table")}
+    <p>Table code <strong style="color:var(--gold);letter-spacing:.2em">${esc(X.N.code.toUpperCase())}</strong></p><button class="btn ghost" data-act="invite">Invite friends</button>
+    <button class="btn ghost" data-act="${k}-rules">Rules</button>
+    ${walletHTML()}
+    ${m==="host"&&X.S&&X.S.phase==="play"?`<button class="btn ghost" data-act="x-end" data-g="${k}">End this game · no chips change</button>`:""}
+    <button class="btn ghost" data-act="x-leave" data-g="${k}">${m==="host"?"Close the table for everyone":"Leave the table"}</button>
+  </div></div>`;
+}
+function xRulesSheet(k){return`<div class="overlay" data-act="close-bg"><div class="sheet"><div class="eyebrow">How to play</div><h2>${esc(k==="so"?"Solitaire":XD[k].name)}</h2>${k==="so"?SO_RULES:XD[k].rules}<button class="btn gold" data-act="close">Got it</button></div></div>`;}
+const xCard=(c,extra="",style="")=>{
+  if(!c)return`<div class="card down ${extra}" style="${style}"></div>`;
+  if(c[0]===14)return`<div class="card joker ${extra}" style="${style}" data-key="j${c[1]}-${c[2]||0}"><div class="c tl">★<small>J</small></div><div class="mid">★</div><div class="c br">★<small>J</small></div></div>`;
+  const h=cardHTML(c,extra,style);return c[2]?h.replace(/data-key="([^"]*)"/,`data-key="$1-${c[2]}"`):h;
+};
+const sameX=(a,b)=>!!a&&!!b&&a[0]===b[0]&&a[1]===b[1]&&(a[2]||0)===(b[2]||0);
+const xck=c=>c[0]+"-"+c[1]+"-"+(c[2]||0);
+const rankName=(r,n)=>{const w=({1:"Ace",11:"Jack",12:"Queen",13:"King"})[r]||String(r);return n===1?w:w+(w==="6"?"es":"s");};
+const numWord=n=>["","One","Two","Three","Four"][n]||String(n);
+
+/* ================= Cheat ================= */
+const CH_WIN=4000,CH_REVEAL=2600;
+const chSort=h=>h.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+const chRankWord=(r,n)=>{const w=({1:"Ace",11:"Jack",12:"Queen",13:"King"})[r]||String(r);return n===1?w:w+"s";};
+const chClaim=(n,r,lower)=>{const t=`${numWord(n)} ${chRankWord(r,n)}`;return lower?t.replace(/^\w+/,w=>w.toLowerCase()):t;};
+function chAdvance(S){
+  S.rank=S.rank%13+1;S.turn=xNextIn(S,S.last?S.last.by:S.turn);S.sub="turn";S.passed=[];S.reveal=null;
+}
+function chPlay(S,i,cards){
+  const h=S.hands[i];
+  const pick=[];for(const c of cards){const j=h.findIndex(d=>sameC(d,c)&&!pick.includes(d));if(j<0)return false;pick.push(h[j]);}
+  if(!pick.length||pick.length>4)return false;
+  S.hands[i]=h.filter(d=>!pick.includes(d));S.pile.push(...pick);
+  S.last={by:i,n:pick.length,rank:S.rank,cards:pick};S.sub="call";S.winAt=Date.now()+CH_WIN;S.passed=[];S.plays=(S.plays||0)+1;
+  return true;
+}
+function chAuto(S,i){
+  const h=S.hands[i];if(!h.length)return;
+  const real=h.filter(c=>c[0]===S.rank);
+  chPlay(S,i,real.length?real.slice(0,4):[chBluffCard(S,h)]);
+}
+// the card you'll need last: its rank comes up furthest away in the cycle
+function chBluffCard(S,h){let best=h[0],bd=-1;for(const c of h){const d=((c[0]-S.rank)%13+13)%13;if(d>bd){bd=d;best=c;}}return best;}
+function chAccept(S){
+  const w=S.last.by;
+  if(!S.hands[w].length){xWin(S,w);return;}
+  chAdvance(S);
+}
+function chResolve(S){
+  const R=S.reveal;
+  S.hands[R.taker].push(...S.pile);chSort(S.hands[R.taker]);S.pile=[];
+  if(R.truth&&!S.hands[R.who].length){xWin(S,R.who);return;}
+  chAdvance(S);
+}
+xReg("ch",{name:"Cheat",tag:"Bluff, or call it · 3–6 players",min:3,max:6,seats:6,buyins:[0,25,50,100],priv:true,winTitle:"Cheat champion!",winSub:"First to empty your hand",
+  start(S,el){
+    const deck=jbDeck();S.hands={};S.players.forEach((_,i)=>S.hands[i]=[]);
+    let j=0;while(deck.length){S.hands[el[j%el.length]].push(deck.pop());j++;}
+    el.forEach(i=>chSort(S.hands[i]));
+    const a=el.find(i=>S.hands[i].some(c=>c[0]===1&&c[1]===0));
+    S.turn=a!=null?a:el[0];S.rank=1;S.pile=[];S.last=null;S.reveal=null;S.sub="turn";S.passed=[];S.plays=0;S.memo={};
+  },
+  act(S,i,a,o){
+    if(a==="play"){if(S.sub!=="turn"||S.turn!==i||!Array.isArray(o.cards))return false;return chPlay(S,i,o.cards.slice(0,4).filter(c=>Array.isArray(c)));}
+    if(a==="call"){
+      if(S.sub!=="call"||!S.last||i===S.last.by)return false;if(o.k!=null&&o.k!==S.actN)return false;
+      const truth=S.last.cards.every(c=>c[0]===S.last.rank);
+      S.reveal={caller:i,who:S.last.by,cards:S.last.cards,truth,taker:truth?i:S.last.by,rank:S.last.rank,n:S.last.n,pileN:S.pile.length};
+      S.sub="reveal";S.toast={id:rid(5),text:`${S.players[i].name} calls Cheat!`};return true;
+    }
+    if(a==="pass"){
+      if(S.sub!=="call"||!S.last||i===S.last.by||S.passed.includes(i))return false;if(o.k!=null&&o.k!==S.actN)return false;
+      S.passed.push(i);
+      if(xInR(S).filter(j=>j!==S.last.by).every(j=>S.passed.includes(j)||S.players[j].gone))chAccept(S);
+      return true;
+    }
+    return false;
+  },
+  timer(S){
+    if(S.sub==="turn")return{key:"t"+S.actN,ms:TURN_MS,clock:true,fn:S2=>{S2.toast={id:rid(5),text:`${S2.players[S2.turn].name} ran out of time · a card was played for them`};chAuto(S2,S2.turn);}};
+    if(S.sub==="call")return{key:"c"+S.actN,ms:S.winAt-Date.now(),fn:chAccept};
+    if(S.sub==="reveal")return{key:"r"+S.actN,ms:CH_REVEAL,fn:chResolve};
+    return null;
+  },
+  actor:S=>S.sub==="turn"?S.turn:-1,
+  auto:(S,i)=>chAuto(S,i),
+  pub:S=>({turn:S.turn,rank:S.rank,sub:S.sub,pileN:S.pile.length,plays:S.plays,
+    last:S.last?{by:S.last.by,n:S.last.n,rank:S.last.rank}:null,reveal:S.reveal,
+    wl:S.sub==="call"?Math.max(0,S.winAt-Date.now()):null,passed:S.passed}),
+  pubP:(S,i)=>({cnt:S.hands[i].length}),
+  priv:(S,i)=>({h:S.hands[i]}),
+  botDelay(S,i,d){
+    if(S.sub==="turn"&&S.turn===i)return 900+Math.random()*1100;
+    if(S.sub==="call"&&S.last&&S.last.by!==i&&!S.passed.includes(i))return(d==="hard"?500:d==="easy"?1200:800)+Math.random()*900;
+    return null;
+  },
+  bot(S,i,d){
+    const h=S.hands[i];
+    if(S.sub==="turn"&&S.turn===i){
+      const real=h.filter(c=>c[0]===S.rank);
+      if(real.length){const cards=real.slice(0,4);
+        if(d!=="easy"&&cards.length<4&&h.length>cards.length+2&&Math.random()<(d==="hard"?.3:.15))cards.push(chBluffCard(S,h.filter(c=>c[0]!==S.rank)));
+        return{a:"play",cards};}
+      const cards=[chBluffCard(S,h)];
+      if(h.length>6&&Math.random()<(d==="easy"?.35:.2)){const rest=h.filter(c=>!sameC(c,cards[0]));cards.push(chBluffCard(S,rest));}
+      return{a:"play",cards};
+    }
+    if(S.sub==="call"&&S.last){
+      const key=S.actN+":"+i;if(S.memo[key]!=null)return S.memo[key]?{a:"call",k:S.actN}:{a:"pass",k:S.actN};
+      const mineN=h.filter(c=>c[0]===S.last.rank).length,left=S.hands[S.last.by].length;
+      let call=mineN+S.last.n>4;
+      if(!call){let p=[.06,.14,.28,.5][S.last.n-1]||.5;if(left===0)p+=.55;else if(left<=2)p+=.15;if(d==="easy")p*=.6;if(d==="hard"&&mineN>=2)p+=.2;call=Math.random()<p;}
+      S.memo[key]=call;return call?{a:"call",k:S.actN}:{a:"pass",k:S.actN};
+    }
+    return null;
+  },
+  seat(v,i,mine){
+    const p=v.pl[i],turn=v.sub==="turn"&&v.turn===i;
+    let st=turn?"Playing…":"";
+    if(v.last&&v.last.by===i&&v.sub!=="turn")st=`Played ${chClaim(v.last.n,v.last.rank,1)}`;
+    if(v.sub==="call"&&v.passed&&v.passed.includes(i))st="Let it go";
+    if(v.reveal&&v.reveal.caller===i)st="Called Cheat!";
+    return{turn,st,line:`<span class="rmcount">${p.cnt} ${p.cnt===1?"card":"cards"}</span>`};
+  },
+  center(v,mine,pv,X){
+    const n=Math.min(8,v.pileN||0),R=v.reveal;
+    const angles=[-14,9,-4,18,-22,6,-10,14];
+    let pile=`<div class="chpile" aria-label="${v.pileN} cards in the pile">${n?Array.from({length:n},(_,j)=>`<div class="card down" style="transform:translate(-50%,-50%) rotate(${angles[j]}deg)"></div>`).join(""):`<div class="chempty">Pile</div>`}</div>`;
+    if(R)pile=`<div class="chreveal ${R.truth?"truth":"lie"}">${R.cards.map((c,j)=>cardHTML(c,"reveal",`animation-delay:${j*120}ms`)).join("")}</div>`;
+    let claim="";
+    if(R)claim=`<div class="chverdict ${R.truth?"truth":"lie"}"><b>${R.truth?"Truth!":"Caught!"}</b><span>${R.truth?`${R.who===mine?"You":esc(v.pl[R.who].n)} really played ${chClaim(R.n,R.rank,1)}. ${R.taker===mine?"You take":esc(v.pl[R.taker].n)+" takes"} the pile.`:`${R.who===mine?"You were":esc(v.pl[R.who].n)+" was"} bluffing. ${R.taker===mine?"You take":esc(v.pl[R.taker].n)+" takes"} the pile.`}</span></div>`;
+    else if(v.last&&v.sub==="call")claim=`<div class="chclaim">${avatarHTML(v.pl[v.last.by].n,v.pl[v.last.by].col,28,v.pl[v.last.by].c)}<span>${v.last.by===mine?"You played":esc(v.pl[v.last.by].n)+" played"}</span><b>${chClaim(v.last.n,v.last.rank)}</b></div>`;
+    else if(v.sub==="turn")claim=`<div class="chclaim soft"><span>${v.turn===mine?"Your turn":esc(v.pl[v.turn].n)+"'s turn"}</span><b>${chRankWord(v.rank,2)}</b></div>`;
+    let btn="";
+    if(v.sub==="call"&&v.last&&mine>=0&&v.last.by!==mine&&v.pl[mine].in){
+      const dl=turnDeadline("chw"+v.gid+v.actN,v.wl),left=Math.max(0,dl-Date.now()),C=295,off=Math.round(C*(1-left/CH_WIN));
+      const passed=v.passed&&v.passed.includes(mine);
+      btn=`<div class="chcall"><button class="chbtn" data-act="x-do" data-g="ch" data-a="call" ${passed?"disabled":""} aria-label="Call Cheat">
+        <svg class="chring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="47" class="rbg"/><circle cx="50" cy="50" r="47" class="rfg" style="stroke-dashoffset:${off};animation-duration:${left}ms"/></svg><span>CHEAT!</span></button>
+        ${passed?`<span class="pill">Waiting for the others…</span>`:`<button class="link" data-act="x-do" data-g="ch" data-a="pass">Let it go</button>`}</div>`;
+    }
+    return`<div class="chmid"><div class="chstack">${pile}<span class="lbl">${R?`${R.pileN} cards`:`Pile · ${v.pileN||0} ${v.pileN===1?"card":"cards"}`}</span></div>${claim}${btn}</div>`;
+  },
+  panel(v,mine,pv,X){
+    if(!pv)return`<p class="note" style="text-align:center">Getting your cards…</p>`;
+    const h=pv.h,myTurn=v.sub==="turn"&&v.turn===mine,busy=X.mode==="client"&&X.N.pend===v.gid+":"+v.actN;
+    const keys=new Set(h.map(ck));X.ui.sel=(X.ui.sel||[]).filter(k=>keys.has(k));if(!myTurn)X.ui.sel=[];
+    const sel=X.ui.sel,ov=h.length>16?.62:h.length>10?.5:.38;
+    const hand=`<div class="rmhand chhand" style="--ov:${ov}">${h.map(c=>{const s=sel.includes(ck(c));
+      return`<button class="rmc omc ${s?"sel":""} ${myTurn&&c[0]===v.rank?"fit":""}" data-act="ch-sel" data-c="${ck(c)}" ${myTurn?"":"disabled"} aria-pressed="${s}" aria-label="${cardName(c)}">${cardHTML(c)}</button>`;}).join("")}</div>`;
+    let head,acts="";
+    if(myTurn){
+      head=`<div class="who"><strong>Your turn · play ${chRankWord(v.rank,2)}</strong>${clockHTML(v.gid+":"+v.actN+":"+mine,v.tl,true)}</div>`;
+      acts=`<button class="btn gold chplay" data-act="ch-play" ${sel.length&&!busy?"":"disabled"}>${sel.length?`Play ${sel.length} as ${chRankWord(v.rank,sel.length===1?1:2)}`:"Pick 1 to 4 cards"}</button>`;
+    }else if(v.sub==="call"&&v.last&&v.last.by===mine)head=`<div class="who"><strong>Will anyone call Cheat?</strong></div>`;
+    else if(v.sub==="reveal")head=`<div class="who"><span class="st2">Cards turned over…</span></div>`;
+    else head=`<div class="who"><span class="st2">${esc(v.pl[v.turn].n)} plays ${chRankWord(v.rank,2)} · ${chRankWord(v.rank%13+1,2)} are next</span></div>`;
+    let coach="";
+    if(X.mode==="practice"&&PR.coach&&myTurn){const real=h.filter(c=>c[0]===v.rank).length;
+      coach=`<div class="coach">${real?`You have <b>${real} real ${chRankWord(v.rank,real)}</b>, so you can play honestly. Gold cards are the ones that match.`:`You have no ${chRankWord(v.rank,2)}. <b>Bluff</b>: pick a card you won't need soon and play it as one.`}</div>`;}
+    else if(X.mode==="practice"&&PR.coach&&v.sub==="call"&&v.last&&v.last.by!==mine){const m=h.filter(c=>c[0]===v.last.rank).length;
+      if(m+v.last.n>4)coach=`<div class="coach">You hold <b>${m}</b> ${chRankWord(v.last.rank,2)} yourself, so ${v.last.n} more is impossible. <b>Call Cheat!</b></div>`;}
+    return`${coach}${head}${hand}<div class="betrow"><span class="st2">${h.length} ${h.length===1?"card":"cards"} · sorted by rank</span></div>${acts}`;
+  },
+  rules:`<p>Get rid of all your cards first. You play them face down and say what they are, so you can lie.</p>
+    <h3>Start</h3><ul><li>The whole deck is dealt out. Some players get one more card than others.</li><li>Whoever has the Ace of Spades goes first, with Aces.</li></ul>
+    <h3>Each turn</h3><ul><li>Play 1 to 4 cards face down and claim the rank whose turn it is: Aces, then 2s, 3s… up to Kings, then back to Aces.</li>
+    <li>The game makes the claim for you, like "Two 7s". You don't have to tell the truth: mix in other cards or play none of the right rank.</li></ul>
+    <h3>Calling Cheat</h3><ul><li>After each play, everyone else has 4 seconds to tap <b>CHEAT!</b> Tap <b>Let it go</b> to pass early.</li>
+    <li>The cards turn over. If they weren't all the claimed rank, the bluffer takes the whole pile. If they were, the caller takes it.</li>
+    <li>If two people call at once, the first call to reach the host counts.</li></ul>
+    <h3>Winning</h3><ul><li>Empty your hand and survive the last call to win. If you're caught bluffing on your last cards, you pick up the pile and play on.</li>
+    <li>15 seconds per turn, or a card is played for you.</li><li>Chips: everyone puts in the buy-in and the winner takes the pot.</li></ul>`
+});
+
+/* ================= Garbage ================= */
+const GB_STEP=720;
+const gbWild=c=>!!c&&(c[0]===13||c[0]===14);
+const gbNum=c=>!!c&&c[0]>=1&&c[0]<=10;
+const gbSlotName=j=>j===0?"A":String(j+1);
+function gbDone(lay){return lay.every(s=>s.up);}
+function gbUsable(S,i,c){
+  const lay=S.lay[i];if(!c)return false;
+  if(gbWild(c))return lay.some(s=>!s.up);
+  if(!gbNum(c)||c[0]>S.L[i])return false;
+  const s=lay[c[0]-1];return!s.up||gbWild(s.c);
+}
+function gbDeal(S){
+  const el=xInR(S),decks=el.length>3?2:1;let deck=[];
+  for(let d=0;d<decks;d++){for(let s=0;s<4;s++)for(let r=1;r<=13;r++)deck.push(d?[r,s,d]:[r,s]);if(S.opt.jokers){deck.push([14,0,d]);deck.push([14,1,d]);}}
+  shuffle(deck);
+  S.lay={};el.forEach(i=>{S.lay[i]=Array.from({length:S.L[i]},()=>({c:deck.pop(),up:false}));});
+  S.stock=deck;S.disc=[S.stock.pop()];S.hold=null;S.holdFrom="";S.sub="draw";S.final=null;S.roundWin=[];S.lastSlot=-1;S.msg="";
+  S.dealer=xNextIn(S,S.dealer==null?el[el.length-1]:S.dealer);S.turn=xNextIn(S,S.dealer);
+}
+function gbDraw(S,i,src){
+  if(src==="disc"){const t=S.disc[S.disc.length-1];if(!t||S.final||!gbUsable(S,i,t))return false;S.hold=S.disc.pop();}
+  else{if(!S.stock.length){const top=S.disc.pop();S.stock=shuffle(S.disc);S.disc=top?[top]:[];}if(!S.stock.length)return false;S.hold=S.stock.pop();}
+  S.holdFrom=src;S.sub="chain";S.lastSlot=-1;S.msg=`${S.players[i].name} drew ${src==="disc"?"from the discard pile":"a card"}`;return true;
+}
+function gbEndTurn(S,i){
+  if(S.hold){S.disc.push(S.hold);S.hold=null;}
+  S.lastSlot=-1;
+  if(gbDone(S.lay[i])&&!S.roundWin.includes(i)){
+    S.roundWin.push(i);
+    if(S.L[i]===1){xWin(S,i);S.sub="over";return;}
+    if(!S.final){S.final=[];let j=xNextIn(S,i);while(j!==i){if(!S.roundWin.includes(j))S.final.push(j);j=xNextIn(S,j);}}
+  }
+  if(S.final){S.final=S.final.filter(j=>j!==i);
+    if(!S.final.length){S.sub="round";S.turn=-1;return;}
+    S.turn=S.final[0];S.sub="draw";return;}
+  S.turn=xNextIn(S,i);S.sub="draw";
+}
+function gbStep(S){
+  const i=S.turn,h=S.hold,lay=S.lay[i];if(!h){gbEndTurn(S,i);return;}
+  if(gbDone(lay)){gbEndTurn(S,i);return;}
+  if(gbWild(h)){if(lay.some(s=>!s.up)){S.sub="wild";return;}gbEndTurn(S,i);return;}
+  if(!gbNum(h)||h[0]>S.L[i]){S.msg=h[0]===11||h[0]===12?`${label(h[0])} is garbage`:`${label(h[0])} has no slot`;gbEndTurn(S,i);return;}
+  const s=lay[h[0]-1];
+  if(!s.up){S.hold=s.c;s.c=h;s.up=true;S.lastSlot=h[0]-1;S.msg="";if(gbDone(lay))gbEndTurn(S,i);return;}
+  if(gbWild(s.c)){S.hold=s.c;s.c=h;S.lastSlot=h[0]-1;S.msg="Bumped the wild card";return;}
+  S.msg=`Already have a ${label(h[0])}`;gbEndTurn(S,i);
+}
+function gbWildSlot(S,i){const lay=S.lay[i];for(let j=lay.length-1;j>=0;j--)if(!lay[j].up)return j;return-1;}
+function gbPlaceWild(S,i,j){
+  const lay=S.lay[i];if(!(j>=0&&j<lay.length)||lay[j].up)return false;
+  const old=lay[j].c;lay[j].c=S.hold;lay[j].up=true;S.hold=old;S.lastSlot=j;S.sub="chain";S.msg="";
+  if(gbDone(lay))gbEndTurn(S,i);return true;
+}
+function gbAuto(S,i){
+  if(S.sub==="draw"){gbDraw(S,i,gbUsable(S,i,S.disc[S.disc.length-1])&&!S.final?"disc":"stock");return;}
+  if(S.sub==="wild")gbPlaceWild(S,i,gbWildSlot(S,i));
+}
+xReg("gb",{name:"Garbage",tag:"Fill A to 10, chain your flips · 2–6 players",min:2,max:6,seats:6,buyins:[0,25,50,100],opt:{jokers:false},winTitle:"Garbage champion!",winSub:"Down to one card and filled it",
+  start(S,el){S.L={};el.forEach(i=>S.L[i]=10);S.round=1;S.dealer=null;gbDeal(S);},
+  act(S,i,a,o){
+    if(a==="draw"){if(S.sub!=="draw"||S.turn!==i)return false;return gbDraw(S,i,o.src==="disc"?"disc":"stock");}
+    if(a==="wild"){if(S.sub!=="wild"||S.turn!==i)return false;return gbPlaceWild(S,i,o.slot|0);}
+    if(a==="next"){if(S.sub!=="round")return false;
+      S.roundWin.forEach(j=>{S.L[j]=Math.max(1,S.L[j]-1);});S.round++;gbDeal(S);return true;}
+    return false;
+  },
+  timer(S){
+    if(S.sub==="draw")return{key:"d"+S.actN,ms:TURN_MS,clock:true,fn:S2=>{S2.toast={id:rid(5),text:`${S2.players[S2.turn].name} ran out of time · a card was drawn for them`};gbAuto(S2,S2.turn);}};
+    if(S.sub==="chain")return{key:"s"+S.actN,ms:GB_STEP,fn:gbStep};
+    if(S.sub==="wild")return{key:"w"+S.actN,ms:TURN_MS,clock:true,fn:S2=>gbAuto(S2,S2.turn)};
+    return null;
+  },
+  actor:S=>S.sub==="draw"||S.sub==="wild"?S.turn:-1,
+  auto:(S,i)=>gbAuto(S,i),
+  pub:S=>({turn:S.turn,sub:S.sub,hold:S.hold,holdFrom:S.holdFrom,top:S.disc[S.disc.length-1]||null,stockN:S.stock.length,round:S.round,
+    final:S.final,roundWin:S.roundWin,lastSlot:S.lastSlot,msg:S.msg,discOK:S.sub==="draw"&&S.turn>=0&&!S.final&&gbUsable(S,S.turn,S.disc[S.disc.length-1])}),
+  pubP:(S,i)=>({L:S.L[i],lay:S.lay[i].map(s=>s.up?s.c:null)}),
+  botDelay(S,i){if(S.turn!==i)return null;if(S.sub==="draw")return 900+Math.random()*700;if(S.sub==="wild")return 700+Math.random()*500;return null;},
+  bot(S,i){if(S.turn!==i)return null;
+    if(S.sub==="draw")return{a:"draw",src:gbUsable(S,i,S.disc[S.disc.length-1])&&!S.final?"disc":"stock"};
+    if(S.sub==="wild")return{a:"wild",slot:gbWildSlot(S,i)};return null;},
+  seat(v,i){
+    const p=v.pl[i],turn=v.turn===i&&(v.sub==="draw"||v.sub==="wild"||v.sub==="chain");
+    const f=p.lay.filter(Boolean).length;
+    const mini=`<span class="gbmini">${Array.from({length:10},(_,j)=>`<i class="${j>=p.L?"x":p.lay[j]?"f":""}"></i>`).join("")}</span>`;
+    let st=turn?(v.sub==="draw"?"Drawing…":v.sub==="wild"?"Placing a wild":"Flipping…"):v.final&&v.final.includes(i)?"Final turn":"";
+    if(v.roundWin&&v.roundWin.includes(i))st="Filled it!";
+    return{turn:v.turn===i&&v.sub!=="chain"?true:turn,st,line:`${mini}<span class="rmcount">${f} of ${p.L}${p.L<10?` · needs A–${gbSlotName(p.L-1)}`:""}</span>`};
+  },
+  center(v,mine,pv,X){
+    const me=mine>=0?v.pl[mine]:null,myTurn=v.turn===mine&&me&&me.in;
+    const canDraw=myTurn&&v.sub==="draw";
+    const piles=`<div class="gbpiles">
+      <button class="rmpile ${canDraw?"can":""}" data-act="x-do" data-g="gb" data-a="draw" data-src="stock" ${canDraw?"":"disabled"} aria-label="Draw from the pile">${v.stockN?`<div class="card down"></div>`:`<div class="slot"></div>`}<span>Draw · ${v.stockN}</span></button>
+      <button class="rmpile ${canDraw&&v.discOK?"can":""}" data-act="x-do" data-g="gb" data-a="draw" data-src="disc" ${canDraw&&v.discOK?"":"disabled"} aria-label="Take the discard">${v.top?xCard(v.top):`<div class="slot"></div>`}<span>Discard</span></button>
+      ${v.hold?`<div class="gbhold" data-from="${v.holdFrom==="disc"?".gbpiles .rmpile:nth-child(2)":".gbpiles .rmpile:first-child"}">${xCard(v.hold,"gbheld")}<span class="pill">${gbWild(v.hold)?(v.sub==="wild"?(v.turn===mine?"Wild! Tap a face-down slot":"Wild card"):"Wild card"):gbNum(v.hold)&&v.hold[0]<=v.pl[v.turn].L?`${label(v.hold[0])} → slot ${gbSlotName(v.hold[0]-1)}`:`${label(v.hold[0])} · garbage`}</span></div>`:""}</div>`;
+    let lay="";
+    if(me&&me.in&&v.sub!=="round"){
+      const wildPick=myTurn&&v.sub==="wild";
+      lay=`<div class="gblay"><div class="betrow"><span class="lbl">Your layout · A to ${gbSlotName(me.L-1)}</span><span class="pill gbcount">${me.lay.filter(Boolean).length} of ${me.L}</span></div>
+        <div class="gbgrid" style="--cols:${Math.min(5,me.L)}">${me.lay.map((c,j)=>{const can=wildPick&&!c;
+          return`<button class="gbslot ${v.lastSlot===j&&v.turn===mine?"hit":""} ${can?"can":""}" data-act="x-do" data-g="gb" data-a="wild" data-slot="${j}" ${can?"":"disabled"} aria-label="Slot ${gbSlotName(j)}${c?" "+(gbWild(c)?"wild":cardName(c)):" face down"}">${c?xCard(c,gbWild(c)?"gbwild":""):`<div class="card down" data-key="gbs-${mine}-${j}"></div>`}<em>${gbSlotName(j)}${c&&gbWild(c)?" · wild":""}</em></button>`;}).join("")}</div></div>`;
+    }
+    let round="";
+    if(v.sub==="round"){
+      round=`<div class="gbround"><b>Round ${v.round} over</b>${v.pl.map((p,i)=>p.in?`<div class="betrow"><span>${i===mine?"You":esc(p.n)}</span><span class="st2">${v.roundWin.includes(i)?`<span style="color:#6fdc8c;font-weight:800">Filled it</span> · next round A–${gbSlotName(Math.max(1,p.L-1)-1)}`:`${p.lay.filter(Boolean).length} of ${p.L} · stays at ${p.L}`}</span></div>`:"").join("")}</div>`;
+    }
+    const msg=v.msg?`<div class="msg gbmsg">${esc(v.msg)}</div>`:"";
+    return`<div class="gbmid"><span class="lbl">Round ${v.round}${v.final?" · final turns":""}</span>${piles}${msg}${lay}${round}</div>`;
+  },
+  panel(v,mine,pv,X){
+    const me=v.pl[mine],myTurn=v.turn===mine,host=X.mode!=="client";
+    if(v.sub==="round")return host?`<button class="btn gold" data-act="x-do" data-g="gb" data-a="next">Deal round ${v.round+1}</button>`:`<p class="note" style="text-align:center">Waiting for the host to deal the next round.</p>`;
+    let head;
+    if(myTurn&&v.sub==="draw")head=`<div class="who"><strong>Your turn · draw a card</strong>${clockHTML(v.gid+":"+v.actN+":"+mine,v.tl,true)}</div>`;
+    else if(myTurn&&v.sub==="wild")head=`<div class="who"><strong>Wild card · tap a face-down slot</strong>${clockHTML(v.gid+":"+v.actN+":"+mine,v.tl,true)}</div>`;
+    else if(myTurn)head=`<div class="who"><strong>Chain! Flipping your cards…</strong></div>`;
+    else head=`<div class="who"><span class="st2">${v.turn>=0?esc(v.pl[v.turn].n)+(v.sub==="chain"?" is flipping…":"'s turn"):""}</span></div>`;
+    let coach="";
+    if(X.mode==="practice"&&PR.coach&&myTurn){
+      if(v.sub==="draw")coach=`<div class="coach">${v.discOK?`The <b>${label(v.top[0])}</b> on the discard pile fits your layout. Take it!`:"Nothing on the discard pile fits, so draw from the pile."}${v.final?" It's your final turn, so only the draw pile counts.":""}</div>`;
+      else if(v.sub==="wild")coach=`<div class="coach">Kings${v.opt&&v.opt.jokers?" and Jokers":""} are wild. Put it in a slot you think will be hard to fill. A real card can bump it out later.</div>`;
+    }
+    const can=myTurn&&v.sub==="draw";
+    const acts=`<div class="rmacts"><button class="call" data-act="x-do" data-g="gb" data-a="draw" data-src="stock" ${can?"":"disabled"}>Draw pile</button><button data-act="x-do" data-g="gb" data-a="draw" data-src="disc" ${can&&v.discOK?"":"disabled"}>Take the ${v.top?(v.top[0]===14?"Joker":label(v.top[0])):"discard"}</button></div>`;
+    return`${coach}${head}${acts}`;
+  },
+  waitExtra(v,host){const j=!!(v.opt&&v.opt.jokers);
+    return host?`<button class="switch" role="switch" aria-checked="${j}" data-act="x-opt" data-g="gb" data-o="jokers"><span>Jokers are wild too</span><i></i></button>`
+      :`<p class="note">Jokers: ${j?"on, and wild":"off"}</p>`;},
+  rules:`<p>Fill your layout from Ace to 10. Each round you win, your layout gets one card shorter. The first to fill a single-card layout wins.</p>
+    <h3>Setup</h3><ul><li>Everyone gets 10 cards face down in two rows: slots A, 2, 3, 4, 5 on top and 6, 7, 8, 9, 10 below. You can't look at them.</li>
+    <li>With more than 3 players, two decks are shuffled together.</li></ul>
+    <h3>Your turn</h3><ul><li>Draw from the draw pile, or take the top discard if it fits your layout.</li>
+    <li>A number card goes into its slot. The face-down card there flips up and you keep going with it. That's a chain.</li>
+    <li>Kings${" "}(and Jokers, if the host turns them on) are wild: tap any face-down slot for them. A real card for that slot bumps the wild out, and you place the wild somewhere else.</li>
+    <li>Your turn ends on a Jack or Queen (garbage), a card for a slot you already filled, or a number above your layout. That card goes on the discard pile.</li></ul>
+    <h3>Rounds</h3><ul><li>When someone fills their layout, everyone else gets one final turn, drawing from the draw pile only.</li>
+    <li>Everyone who filled their layout gets one fewer card next round (A to 9, then A to 8…). The others stay the same.</li>
+    <li>15 seconds to draw, or a card is drawn for you. Chips: the overall winner takes the pot.</li></ul>`
+});
+
+/* ================= Speed ================= */
+const SP_FLIP=2200;
+const spFits=(top,c)=>!!top&&!!c&&(Math.abs(top[0]-c[0])===1||Math.abs(top[0]-c[0])===12);
+const spTop=(S,p)=>S.piles[p][S.piles[p].length-1]||null;
+function spCan(S,i){const h=S.hands[i];if(!h.length&&!S.decks[i].length)return true;return h.some(c=>spFits(spTop(S,0),c)||spFits(spTop(S,1),c));}
+function spCanAny(S){return xInR(S).some(i=>spCan(S,i));}
+function spFlip(S){
+  if(!S.side[0].length&&!S.side[1].length){
+    const rest=[...S.piles[0].slice(0,-1),...S.piles[1].slice(0,-1)];
+    if(!rest.length){const el=xInR(S),cnt=i=>S.hands[i].length+S.decks[i].length;xWin(S,cnt(el[0])<=cnt(el[1])?el[0]:el[1]);return;}
+    S.piles[0]=S.piles[0].slice(-1);S.piles[1]=S.piles[1].slice(-1);shuffle(rest);
+    const h=Math.ceil(rest.length/2);S.side=[rest.slice(0,h),rest.slice(h)];S.msg="Piles reshuffled into new spares";
+  }else S.msg="Nobody can play · new cards";
+  for(let p=0;p<2;p++){const src=S.side[p].length?S.side[p]:S.side[1-p];if(src.length)S.piles[p].push(src.pop());}
+  S.flips=(S.flips||0)+1;S.sub="play";S.last=null;
+}
+function spPlay(S,i,c,p){
+  if(S.sub!=="play"||!(p===0||p===1)||!Array.isArray(c))return false;
+  const h=S.hands[i],j=h.findIndex(d=>sameC(d,c));if(j<0||!spFits(spTop(S,p),h[j]))return false;
+  const card=h.splice(j,1)[0];S.piles[p].push(card);
+  while(h.length<5&&S.decks[i].length)h.push(S.decks[i].pop());
+  S.last={by:i,p,c:card};S.msg="";return true;
+}
+xReg("sp",{name:"Speed",tag:"Race to empty your hand · 2 players",min:2,max:2,seats:2,buyins:[0,25,50,100],priv:true,winTitle:"Speed!",winSub:"Fastest hands at the table",
+  start(S,el){
+    const d=jbDeck();S.hands={};S.decks={};
+    S.down=[d.pop(),d.pop()];S.piles=[[],[]];S.side=[d.splice(0,5),d.splice(0,5)];
+    el.forEach(i=>{S.decks[i]=d.splice(0,20);S.hands[i]=S.decks[i].splice(0,5);});
+    S.sub="count";S.goAt=Date.now()+3200;S.last=null;S.msg="";S.flips=0;
+  },
+  act(S,i,a,o){
+    if(a==="play")return spPlay(S,i,o.c,o.p|0);
+    if(a==="speed"){if(S.sub!=="play"||S.hands[i].length||S.decks[i].length)return false;xWin(S,i);S.sub="over";return true;}
+    return false;
+  },
+  timer(S){
+    if(S.sub==="count")return{key:"go"+S.gid,ms:S.goAt-Date.now(),fn:S2=>{S2.piles=[[S2.down[0]],[S2.down[1]]];S2.down=null;S2.sub="play";}};
+    if(S.sub==="play"&&!spCanAny(S))return{key:"st"+S.actN,ms:SP_FLIP,fn:spFlip};
+    return null;
+  },
+  pub:S=>({sub:S.sub,tops:S.piles.map(p=>p[p.length-1]||null),pileN:S.piles.map(p=>p.length),side:S.side.map(s=>s.length),
+    gl:S.sub==="count"?Math.max(0,S.goAt-Date.now()):null,stuck:S.sub==="play"&&!spCanAny(S),last:S.last,msg:S.msg,flips:S.flips}),
+  pubP:(S,i)=>({hn:S.hands[i].length,dn:S.decks[i].length}),
+  priv:(S,i)=>({h:S.hands[i]}),
+  botDelay(S,i,d){if(S.sub!=="play"||!spCan(S,i))return null;const r={easy:[1700,2600],medium:[1050,1650],hard:[620,1000]}[d]||[1050,1650];return r[0]+Math.random()*(r[1]-r[0]);},
+  bot(S,i){
+    if(S.sub!=="play")return null;const h=S.hands[i];
+    if(!h.length&&!S.decks[i].length)return{a:"speed"};
+    const opts=[];h.forEach(c=>[0,1].forEach(p=>{if(spFits(spTop(S,p),c))opts.push({a:"play",c,p});}));
+    return opts.length?opts[Math.floor(Math.random()*opts.length)]:null;
+  },
+  seat(v,i){const p=v.pl[i];
+    return{turn:false,st:v.last&&v.last.by===i?`Played ${cardName(v.last.c)}`:"",
+      line:`<div class="sphand" aria-label="${p.hn} cards in hand">${Array.from({length:p.hn},()=>`<div class="card down"></div>`).join("")}</div><span class="rmcount">Deck ${p.dn}</span>`};},
+  center(v,mine,pv,X){
+    const me=mine>=0?v.pl[mine]:null,sel=X.ui.spSel,selC=sel&&pv&&pv.h.find(c=>ck(c)===sel);
+    const side=j=>`<div class="spc"><div class="spside">${v.side[j]?`<div class="card down"></div>${v.side[j]>1?`<div class="card down"></div>`:""}`:`<div class="slot"></div>`}</div><span class="lbl">Spare · ${v.side[j]}</span></div>`;
+    const pile=p=>{const t=v.tops&&v.tops[p],can=!!selC&&spFits(t,selC);
+      return`<div class="spc"><button class="sppile ${can?"can":""}" data-act="sp-pile" data-p="${p}" ${can?"":"disabled"} aria-label="Pile ${p+1}${t?" "+cardName(t):""}">${t?cardHTML(t,v.last&&v.last.p===p&&sameC(v.last.c,t)?"":""):`<div class="card down"></div>`}</button><span class="lbl">Pile ${p+1}<span class="kb">${p?"W":"Q"}</span></span></div>`;};
+    let note="";
+    if(v.sub==="count"){const dl=turnDeadline("spgo"+v.gid,v.gl),s=Math.max(1,Math.ceil((dl-Date.now())/1000));note=`<div class="spcount" data-dl="${dl}">${s}</div>`;setTimeout(render,Math.max(50,(dl-Date.now())%1000+20));}
+    else if(v.stuck)note=`<div class="spstuck">Nobody can play · flipping new cards…</div>`;
+    else if(v.msg)note=`<div class="msg spmsg">${esc(v.msg)}</div>`;
+    else note=`<span class="pill sphint">One higher or one lower · K and A connect</span>`;
+    return`<div class="spmid"><div class="sptbl">${side(0)}${pile(0)}${pile(1)}${side(1)}</div>${note}</div>`;
+  },
+  panel(v,mine,pv,X){
+    if(!pv)return`<p class="note" style="text-align:center">Getting your cards…</p>`;
+    const me=v.pl[mine],h=pv.h,play=v.sub==="play";
+    if(X.ui.spSel&&!h.some(c=>ck(c)===X.ui.spSel))X.ui.spSel=null;
+    const fit=c=>play&&v.tops&&(spFits(v.tops[0],c)||spFits(v.tops[1],c));
+    const cards=`<div class="spme">${h.map((c,j)=>`<button class="spcard ${fit(c)?"fit":""} ${X.ui.spSel===ck(c)?"sel":""}" data-act="sp-card" data-c="${ck(c)}" ${play?"":"disabled"} aria-label="${cardName(c)}">${cardHTML(c)}<span class="kb">${j+1}</span></button>`).join("")}${!h.length?`<span class="st2">Hand empty</span>`:""}</div>`;
+    const done=!h.length&&!me.dn;
+    let coach="";
+    if(X.mode==="practice"&&PR.coach&&play){const f=h.filter(fit);
+      coach=`<div class="coach">${done?"You're out of cards. <b>Hit SPEED!</b> before your opponent does.":f.length?`Gold cards fit a pile. Tap one and it plays itself. If it fits both piles, tap the pile you want.`:"Nothing fits right now. Wait for your opponent, or for new cards to flip."}</div>`;}
+    return`<div class="spleft">${coach}<div class="betrow"><span style="display:flex;gap:8px;align-items:center">${avatarHTML(myName(),myColor(),30,CID)}<b>You</b></span><span class="pill">Deck ${me.dn} · Hand ${h.length}</span></div></div>
+      ${cards}
+      <div class="spbtns"><button class="btn gold spspeed ${done?"ready":""}" data-act="x-do" data-g="sp" data-a="speed" ${done&&play?"":"disabled"}>SPEED!</button><span class="lbl" style="text-align:center">${done?"Tap it now!":"Lights up when your hand and deck are empty"}</span></div>`;
+  },
+  rules:`<p>A race for two. There are no turns: both players play at the same time, as fast as they can.</p>
+    <h3>Setup</h3><ul><li>Two cards go face down in the middle. A spare pile of 5 sits on each side.</li><li>Each player gets a 20-card deck and draws 5 of them into their hand.</li></ul>
+    <h3>Playing</h3><ul><li>After the 3, 2, 1 countdown, the two middle cards flip up.</li>
+    <li>Play a card onto either pile if it's one higher or one lower: a 7 or 9 goes on an 8. Suits don't matter. Kings and Aces connect.</li>
+    <li>Your hand refills from your deck to 5 cards each time you play.</li>
+    <li>Tap a card and it plays itself. If it fits both piles, tap the one you want. On a computer, keys 1 to 5 pick a card and Q or W pick the pile.</li></ul>
+    <h3>When you're both stuck</h3><ul><li>If nobody can play, new cards flip from the spare piles onto the middle.</li><li>When the spares run out, the middle piles (except their top cards) are shuffled into new spares.</li></ul>
+    <h3>Winning</h3><ul><li>When your hand and deck are empty, hit <b>SPEED!</b> to win.</li><li>If two plays land on the same pile at the same moment, the first to reach the host counts and the other card stays in your hand.</li>
+    <li>Chips: both put in the buy-in and the winner takes the pot.</li></ul>`
+});
+
+/* ================= Solitaire (Klondike, solo, no chips) ================= */
+let SO=null;const SOX={hint:null,hintT:0,auto:false,shake:null};
+const soRed=c=>c[1]===1||c[1]===2;
+const SO_SUITS=[0,1,2,3];
+function soNew(){
+  if(SO&&!SO.won&&SO.moves>3)stHand("so",0,false);
+  const draw=store.get("hub-so-draw")===3?3:1,d=jbDeck(),tab=[];
+  for(let i=0;i<7;i++){const col=[];for(let j=0;j<=i;j++)col.push({c:d.pop(),up:j===i});tab.push(col);}
+  SO={id:rid(8),draw,stock:d,waste:[],found:[[],[],[],[]],tab,moves:0,start:0,end:0,hist:[],won:false,home:0};
+  SOX.hint=null;SOX.auto=false;store.set("hub-so",SO);
+}
+function soSave(){try{const c=Object.assign({},SO,{hist:SO.hist.slice(-30)});store.set("hub-so",c);}catch(e){}}
+function soLoad(){const s=store.get("hub-so");if(s&&Array.isArray(s.tab)&&s.tab.length===7&&!s.won){SO=s;SO.hist=SO.hist||[];return true;}return false;}
+function soSnap(){SO.hist.push(JSON.stringify({stock:SO.stock,waste:SO.waste,found:SO.found,tab:SO.tab,moves:SO.moves,home:SO.home}));if(SO.hist.length>200)SO.hist.shift();}
+function soUndo(){const h=SO&&SO.hist.pop();if(!h)return false;Object.assign(SO,JSON.parse(h));SO.moves++;soSave();return true;}
+function soFoundIdx(c){
+  for(let i=0;i<4;i++){const f=SO.found[i];if(f.length&&f[0][1]===c[1])return f[f.length-1][0]===c[0]-1?i:-1;}
+  if(c[0]!==1)return-1;return SO.found.findIndex(f=>!f.length);
+}
+const soTabFits=(col,c)=>{const t=col[col.length-1];return t?(t.up&&soRed(t.c)!==soRed(c)&&t.c[0]===c[0]+1):c[0]===13;};
+function soStartClock(){if(!SO.start)SO.start=Date.now();}
+function soFlipTops(){SO.tab.forEach(col=>{const t=col[col.length-1];if(t&&!t.up)t.up=true;});}
+function soToFound(card,from){const fi=soFoundIdx(card);if(fi<0)return false;soSnap();from();SO.found[fi].push(card);SO.home++;dcHit("so","home");return true;}
+function soAfter(){SO.moves++;soFlipTops();soStartClock();
+  if(SO.found.every(f=>f.length===13)&&!SO.won){SO.won=true;SO.end=Date.now();soWon();}
+  soSave();}
+function soWon(){
+  const t=Math.round((SO.end-SO.start)/1000);stSet(s=>{s.so=s.so||{w:0,best:0};s.so.w++;if(!s.so.best||t<s.so.best)s.so.best=t;});
+  stHand("so",0,true);gameDone("so","solo",{gid:SO.id,win:true});
+  celebrate("so"+SO.id,"You won!",`${SO.moves} moves · ${soTime(t*1000)}`);
+}
+const soTime=ms=>{const s=Math.max(0,Math.floor(ms/1000));return Math.floor(s/60)+":"+String(s%60).padStart(2,"0");};
+function soDraw(){
+  if(!SO.stock.length){if(!SO.waste.length)return false;soSnap();SO.stock=SO.waste.reverse();SO.waste=[];SO.moves++;soSave();return true;}
+  soSnap();for(let k=0;k<SO.draw&&SO.stock.length;k++)SO.waste.push(SO.stock.pop());SO.moves++;soStartClock();soSave();return true;
+}
+// tap a card: it goes to the best place it can (a suit pile first, then a column)
+function soTapWaste(){
+  const c=SO.waste[SO.waste.length-1];if(!c)return false;
+  if(soToFound(c,()=>SO.waste.pop())){soAfter();return true;}
+  const ti=soBestCol([c],-1);if(ti<0)return false;
+  soSnap();SO.waste.pop();SO.tab[ti].push({c,up:true});soAfter();return true;
+}
+function soBestCol(run,skip){
+  let best=-1,score=-1;
+  SO.tab.forEach((col,i)=>{if(i===skip||!soTabFits(col,run[0].c||run[0]))return;const s=col.length?2:(run[0].c||run[0])[0]===13?1:0;if(s>score){score=s;best=i;}});
+  return best;
+}
+function soTapTab(ci,j){
+  const col=SO.tab[ci];if(!col[j]||!col[j].up)return false;
+  const run=col.slice(j);
+  for(let k=1;k<run.length;k++){const a=run[k-1].c,b=run[k].c;if(soRed(a)===soRed(b)||a[0]!==b[0]+1)return false;}
+  if(run.length===1&&soToFound(run[0].c,()=>col.pop())){soAfter();return true;}
+  if(j===0&&run[0].c[0]===13)return false;   // a King already at the top of a column has nowhere better to go
+  const ti=soBestCol(run.map(x=>x.c),ci);if(ti<0)return false;
+  soSnap();SO.tab[ti].push(...col.splice(j));soAfter();return true;
+}
+function soTapFound(fi){
+  const f=SO.found[fi],c=f[f.length-1];if(!c)return false;
+  const ti=soBestCol([c],-1);if(ti<0)return false;
+  soSnap();f.pop();SO.home=Math.max(0,SO.home-1);SO.tab[ti].push({c,up:true});soAfter();return true;
+}
+function soHint(){
+  const w=SO.waste[SO.waste.length-1];
+  if(w&&(soFoundIdx(w)>=0))return{t:"w"};
+  for(let i=0;i<7;i++){const col=SO.tab[i],t=col[col.length-1];if(t&&t.up&&soFoundIdx(t.c)>=0)return{t:"t",i,j:col.length-1};}
+  for(let i=0;i<7;i++){const col=SO.tab[i],j=col.findIndex(x=>x.up);if(j<0)continue;
+    if(j===0)continue;   // moving a whole column to another column gains nothing
+    if(SO.tab.some((c2,k)=>k!==i&&soTabFits(c2,col[j].c)))return{t:"t",i,j};}
+  if(w&&SO.tab.some(c2=>soTabFits(c2,w)))return{t:"w"};
+  if(SO.stock.length||SO.waste.length)return{t:"s"};
+  return null;
+}
+const soCanAuto=()=>SO&&!SO.won&&!SO.stock.length&&!SO.waste.length&&SO.tab.every(col=>col.every(x=>x.up));
+function soAutoStep(){
+  if(!SO||SO.won||!SOX.auto)return;
+  let best=null;
+  SO.tab.forEach((col,i)=>{const t=col[col.length-1];if(t&&soFoundIdx(t.c)>=0&&(!best||t.c[0]<best.r))best={i,r:t.c[0]};});
+  if(!best){SOX.auto=false;render();return;}
+  const col=SO.tab[best.i],c=col[col.length-1].c;soToFound(c,()=>col.pop());soAfter();FXQ.card=true;render();
+  if(!SO.won)setTimeout(soAutoStep,130);else SOX.auto=false;
+}
+function soTable(){
+  if(!SO)soNew();
+  const S=SO,hint=SOX.hint&&Date.now()-SOX.hintT<2400?SOX.hint:null;
+  const H=(t,i,j)=>hint&&hint.t===t&&(t!=="t"||(hint.i===i&&hint.j===j))?"glow":"";
+  const wt=S.waste.slice(-(S.draw===3?3:1));
+  const waste=`<button class="sowaste" data-act="so-waste" ${S.waste.length?"":"disabled"} aria-label="Waste pile">${wt.length?wt.map((c,k)=>cardHTML(c,k===wt.length-1?H("w"):"",`--i:${k}`)).join(""):`<div class="slot"></div>`}</button>`;
+  const stock=`<button class="sostock ${H("s")}" data-act="so-stock" aria-label="${S.stock.length?"Draw":"Turn the waste over"}">${S.stock.length?`<div class="card down"></div>`:`<div class="slot so-recyc">↻</div>`}</button>`;
+  const found=S.found.map((f,i)=>`<button class="sofound" data-act="so-found" data-f="${i}" ${f.length?"":"disabled"} aria-label="Suit pile ${i+1}">${f.length?cardHTML(f[f.length-1]):`<div class="slot">${f.length?"":"A"}</div>`}</button>`).join("");
+  const tab=S.tab.map((col,i)=>`<div class="socol" data-col="${i}">${col.length?col.map((x,j)=>x.up?`<button class="socard" data-act="so-tab" data-col="${i}" data-j="${j}" aria-label="${cardName(x.c)}">${cardHTML(x.c,H("t",i,j)+(SOX.shake===i+":"+j?" shake":""))}</button>`:`<div class="card down sodown"></div>`).join(""):`<div class="slot">K</div>`}</div>`).join("");
+  const t=S.start?(S.won?S.end:Date.now())-S.start:0;
+  if(S.start&&!S.won)setTimeout(()=>{const e=document.querySelector(".sotime");if(e&&SO&&SO.start&&!SO.won)e.textContent=soTime(Date.now()-SO.start);},1000);
+  const st=ST.get().so;
+  return`<div id="so" class="sotab">
+    <div class="bj-top"><span class="eyebrow">Solitaire</span><span class="codepill">Draw ${S.draw}</span><span class="shoe">Moves ${S.moves} · <span class="sotime">${soTime(t)}</span></span>
+      <span class="shoe sohome">${S.found.reduce((a,f)=>a+f.length,0)}/52 home</span>${`<button class="chatbtn rulesbtn" data-act="so-rules" aria-label="How to play">${BOOK}</button>`}<button class="menu-btn2" data-act="so-menu" aria-label="Menu">≡</button></div>
+    <div class="sobody"><div class="sotop">${stock}${waste}<span></span>${found}</div>
+      <div class="sotabl">${tab}</div>
+      ${S.won?`<div class="sowin"><b>You won!</b><span>${S.moves} moves · ${soTime(S.end-S.start)}${st&&st.best?` · best ${soTime(st.best*1000)}`:""}</span></div>`:""}</div>
+    <div class="bj-bar sobar"><button class="btn ghost" data-act="so-undo" ${S.hist.length&&!S.won?"":"disabled"}>↶ Undo</button><button class="btn ghost" data-act="so-hint" ${S.won?"disabled":""}>💡 Hint</button>
+      ${soCanAuto()?`<button class="btn ghost" data-act="so-auto">Auto-finish</button>`:""}<button class="btn gold" data-act="so-new">New deal</button></div></div>`;
+}
+function soMenuSheet(){
+  const d=SO?SO.draw:1;
+  return`<div class="overlay" data-act="close-bg"><div class="sheet"><h2>Solitaire</h2>
+    <button class="btn gold" data-act="close">Back to the game</button>${MAIN_BTN()}
+    <div class="label">Cards per draw · starts a new deal</div>
+    <div class="count-pick"><button data-act="so-draw" data-v="1" aria-pressed="${d===1}">Draw 1</button><button data-act="so-draw" data-v="3" aria-pressed="${d===3}">Draw 3</button></div>
+    <button class="btn ghost" data-act="so-rules">Rules</button><button class="btn ghost" data-act="so-new">New deal</button>
+    <p class="note">Solitaire is just for fun. No chips.</p></div></div>`;
+}
+const SO_RULES=`<p>Move all 52 cards onto the four suit piles, from Ace up to King.</p>
+  <h3>The table</h3><ul><li>Seven columns, with the top card of each face up.</li><li>The rest of the deck is the draw pile, top left. The four suit piles are top right.</li></ul>
+  <h3>Moving cards</h3><ul><li>In the columns, build down in alternating colors: a red 6 goes on a black 7.</li>
+  <li>You can move a whole run of face-up cards together. When a face-down card is uncovered, it flips over.</li>
+  <li>Only a King, or a run starting with a King, can go in an empty column.</li>
+  <li>Tap the draw pile to turn cards over (1 or 3 at a time, set in the menu). Only the top one can be played. When it runs out, tap it to turn the pile over again.</li>
+  <li>Build each suit pile up from Ace to King in one suit. You can bring a card back down to the columns if you need it.</li></ul>
+  <h3>Controls</h3><ul><li>Tap a card and it moves to the best spot: a suit pile first, then a column.</li><li><b>Undo</b> takes back a move. <b>Hint</b> shows a move. <b>Auto-finish</b> appears when every card is face up.</li></ul>
+  <p class="note">Solitaire is just for fun, with no chips.</p>`;
 
 /* Egyptian War bots */
 function ewBotTick(){
@@ -5321,6 +6322,7 @@ function render(){
   if(APP.screen==="hm")hmSettle();
   if(APP.screen==="rm")rmSettle();
   if(APP.screen==="om")omSettle();
+  if(xIs(APP.screen))xSettle(APP.screen);
   let html="";
   switch(APP.screen){
     case"hub":html=hub();break;
@@ -5343,6 +6345,9 @@ function render(){
     case"rm":html=rmTable();break;
     case"om-mode":html=omModeScreen();break;
     case"om":html=omTable();break;
+    case"sp":case"ch":case"gb":html=xTable(APP.screen);break;
+    case"sp-mode":case"ch-mode":case"gb-mode":html=xModeScreen(APP.screen.slice(0,2));break;
+    case"so":html=soTable();break;
     case"bc-setup":html=bcSetup();break;
     case"bc-table":html=bcTable();break;
     default:html=game();
@@ -5364,6 +6369,9 @@ function render(){
   else if(APP.sheet==="rm-menu")sheet=rmMenuSheet();
   else if(APP.sheet==="om-rules")sheet=omRulesSheet();
   else if(APP.sheet==="om-menu")sheet=omMenuSheet();
+  else if(/^(sp|ch|gb|so)-rules$/.test(APP.sheet||""))sheet=xRulesSheet(APP.sheet.slice(0,2));
+  else if(/^xmenu-(sp|ch|gb)$/.test(APP.sheet||""))sheet=xMenuSheet(APP.sheet.slice(6));
+  else if(APP.sheet==="so-menu")sheet=soMenuSheet();
   sweepIfCollected();
   paint(app,`<div class="view" data-key="v-${APP.screen}" data-exit>${html}</div>${sheet?`<div class="sheetwrap" data-key="s-${sheetName}" data-exit>${sheet}</div>`:""}`);
   prevV=V;if(CHAT.open)placeDock();
@@ -5372,6 +6380,7 @@ function render(){
   if(APP.screen==="hm")prevHV=HV;
   if(APP.screen==="rm")prevRMV=RMV;
   if(APP.screen==="om")prevOMV=OMV;
+  if(xIs(APP.screen))XS[APP.screen].PV=XS[APP.screen].V;
   if(FXQ.card){FXQ.card=false;sfx("card");}
   onlineTick();
   celebrateCheck();
@@ -5481,6 +6490,40 @@ document.addEventListener("click",e=>{
     case"om-leave":omLeave();return;
     case"om-rules":APP.sheet="om-rules";break;
     case"om-menu":APP.sheet="om-menu";break;
+    case"open-sp":case"open-ch":case"open-gb":{const k=a.slice(5);if(XS[k].mode==="practice")xStop(k);if(XS[k].mode!=="host"&&XS[k].mode!=="client")XS[k].mode="off";APP.screen=k+"-mode";APP.sheet=null;APP.err="";break;}
+    case"sp-rules":case"ch-rules":case"gb-rules":case"so-rules":APP.sheet=a;break;
+    case"x-menu":APP.sheet="xmenu-"+t.dataset.g;break;
+    case"x-buy":XS[t.dataset.g].buy=+t.dataset.v;break;
+    case"x-host":xHost(t.dataset.g);return;
+    case"x-join":xJoin(t.dataset.g);return;
+    case"x-leave":xLeave(t.dataset.g);return;
+    case"x-sit":xToggleSit(t.dataset.g);return;
+    case"x-tbuy":{const X=XS[t.dataset.g];if(X.S&&X.S.phase!=="play"&&X.mode!=="client"){X.S.buyIn=+t.dataset.v;X.buy=X.S.buyIn;xChanged(X.k);return;}break;}
+    case"x-opt":{const X=XS[t.dataset.g],o=t.dataset.o;if(X.S&&X.S.phase!=="play"&&X.mode!=="client"){X.S.opt[o]=!X.S.opt[o];xChanged(X.k);return;}break;}
+    case"x-deal":{const k=t.dataset.g;if(XS[k].S&&XS[k].mode!=="client")xStart(k);return;}
+    case"x-end":{const X=XS[t.dataset.g];APP.sheet=null;if(X.mode==="host"&&X.S&&X.S.phase==="play"){X.S.phase="wait";X.S.players.forEach(p=>p.inRound=false);X.S.toast={id:rid(5),text:"The host ended the game. No chips changed."};xChanged(X.k);}render();return;}
+    case"x-do":{const k=t.dataset.g,o={};if(t.dataset.src)o.src=t.dataset.src;if(t.dataset.slot!=null)o.slot=+t.dataset.slot;
+      const v=XS[k].V;if(t.dataset.a==="call"||t.dataset.a==="pass")o.k=v&&v.actN;
+      if(t.dataset.a==="call"){sfx("slap");buzz(30);}
+      xDo(k,t.dataset.a,o);return;}
+    case"ch-sel":{const X=XS.ch,c=t.dataset.c,i=X.ui.sel.indexOf(c);if(i>=0)X.ui.sel.splice(i,1);else if(X.ui.sel.length<4)X.ui.sel.push(c);else{X.ui.sel.shift();X.ui.sel.push(c);}render();return;}
+    case"ch-play":{const X=XS.ch;if(!X.ui.sel.length)return;const cards=X.ui.sel.map(k=>k.split("-").map(Number));X.ui.sel=[];xDo("ch","play",{cards});return;}
+    case"sp-card":{const X=XS.sp,v=X.V,c=t.dataset.c.split("-").map(Number);if(!v||v.ph!=="play"||v.sub!=="play")return;
+      const f=[0,1].filter(p=>spFits(v.tops[p],c));
+      if(f.length===1){X.ui.spSel=null;xDo("sp","play",{c,p:f[0]});return;}
+      X.ui.spSel=f.length?(X.ui.spSel===t.dataset.c?null:t.dataset.c):null;if(!f.length)buzz(20);render();return;}
+    case"sp-pile":{const X=XS.sp;if(!X.ui.spSel)return;const c=X.ui.spSel.split("-").map(Number);X.ui.spSel=null;xDo("sp","play",{c,p:+t.dataset.p});return;}
+    case"open-so":{if(!SO&&!soLoad())soNew();APP.screen="so";APP.sheet=null;break;}
+    case"so-menu":APP.sheet="so-menu";break;
+    case"so-new":APP.sheet=null;soNew();FXQ.card=true;break;
+    case"so-draw":store.set("hub-so-draw",+t.dataset.v);APP.sheet=null;soNew();break;
+    case"so-stock":if(SO&&!SO.won){soDraw();FXQ.card=true;}break;
+    case"so-waste":if(SO&&!SO.won&&soTapWaste())FXQ.card=true;break;
+    case"so-found":if(SO&&!SO.won&&soTapFound(+t.dataset.f))FXQ.card=true;break;
+    case"so-tab":{if(!SO||SO.won)break;const ci=+t.dataset.col,j=+t.dataset.j;if(soTapTab(ci,j))FXQ.card=true;else{SOX.shake=ci+":"+j;setTimeout(()=>{SOX.shake=null;},400);buzz(15);}break;}
+    case"so-undo":if(SO&&soUndo())FXQ.card=true;break;
+    case"so-hint":{if(!SO)break;SOX.hint=soHint();SOX.hintT=Date.now();setTimeout(render,2500);break;}
+    case"so-auto":if(soCanAuto()){SOX.auto=true;soAutoStep();}return;
     case"jb-menu":APP.sheet="jb-menu";break;
     case"pr-open":if(t.dataset.g)PR.game=t.dataset.g;APP.sheet=null;
       if(PR_SOLO.has(PR.game)){prStart();return;}
@@ -5586,15 +6629,24 @@ document.addEventListener("keydown",e=>{
   if(hit){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();}
 });
 const KEYMAP=[
-  ["h",'.bj-acts [data-a="hit"]'],["s",'.bj-acts [data-a="stand"]'],["d",'.bj-acts [data-a="double"]'],["p",'.bj-acts [data-a="split"]'],
-  ["f",'.hacts [data-a="fold"]'],["c",'.hacts [data-a="call"],.hacts [data-a="check"]'],["r",'.raisebox [data-a="raise"],[data-act="hm-raisebox"]'],
+  ["h",'.bj-acts [data-a="hit"],[data-act="so-hint"]'],["s",'.bj-acts [data-a="stand"]'],["d",'.bj-acts [data-a="double"]'],["p",'.bj-acts [data-a="split"]'],
+  ["f",'.hacts [data-a="fold"]'],["c",'.hacts [data-a="call"],.hacts [data-a="check"],.chbtn'],["r",'.raisebox [data-a="raise"],[data-act="hm-raisebox"]'],
   ["arrowup",'[data-act="hm-step"][data-v="1"]'],["arrowdown",'[data-act="hm-step"][data-v="-1"]'],
-  ["1",'[data-act="bj-bet"][data-v="10"],[data-act="bc-side"][data-s="player"],[data-act="rm-draw"][data-src="stock"]'],
-  ["2",'[data-act="bj-bet"][data-v="50"],[data-act="bc-side"][data-s="banker"],[data-act="rm-draw"][data-src="discard"]'],
+  ["1",'[data-act="bj-bet"][data-v="10"],[data-act="bc-side"][data-s="player"],[data-act="rm-draw"][data-src="stock"],.rmacts [data-a="draw"][data-src="stock"]'],
+  ["2",'[data-act="bj-bet"][data-v="50"],[data-act="bc-side"][data-s="banker"],[data-act="rm-draw"][data-src="discard"],.rmacts [data-a="draw"][data-src="disc"]'],
   ["3",'[data-act="bj-bet"][data-v="100"],[data-act="bc-side"][data-s="tie"]'],["backspace",'[data-act="bj-bet"][data-v="0"]'],
   ["m",'[data-act="rm-meld"]'],["l",'[data-act="rm-layoff"]'],
-  ["space",'[data-act="rm-discard"],[data-act="bj-deal"],[data-act="bj-next"],[data-act="bc-deal"],[data-act="bc-next"],[data-act="hm-deal"],[data-act="rm-deal"],[data-act="om-deal"],.jdeal'],
-  ["t",'.chatbtn:not(.rulesbtn)'],["escape",'.menu-btn2,.menu-btn']];
+  ["space",'[data-act="rm-discard"],[data-act="bj-deal"],[data-act="bj-next"],[data-act="bc-deal"],[data-act="bc-next"],[data-act="hm-deal"],[data-act="rm-deal"],[data-act="om-deal"],.jdeal,[data-act="x-deal"],[data-act="ch-play"],[data-a="next"],[data-act="so-stock"],.spspeed'],
+  ["t",'.chatbtn:not(.rulesbtn)'],["z",'[data-act="so-undo"]'],["n",'[data-act="so-new"]'],["escape",'.menu-btn2,.menu-btn']];
+// Speed: 1 to 5 pick a card, Q and W pick a pile
+document.addEventListener("keydown",e=>{
+  if(APP.screen!=="sp"||APP.sheet||e.repeat||e.metaKey||e.ctrlKey||e.altKey)return;
+  if(e.target&&e.target.closest&&e.target.closest("input,textarea,select"))return;
+  const k=e.key.toLowerCase();let el=null;
+  if(/^[1-5]$/.test(k))el=document.querySelectorAll("#app .view:not(.exiting) .spcard")[+k-1];
+  else if(k==="q"||k==="w")el=document.querySelector(`#app .view:not(.exiting) .sppile[data-p="${k==="q"?0:1}"]`);
+  if(el&&!el.disabled){e.preventDefault();e.stopImmediatePropagation();el.click();}
+},true);
 function keyHints(root){
   KEYMAP.forEach(([k,sel])=>{const lab=k==="space"?"Space":k==="backspace"?"⌫":k==="escape"?"Esc":k==="arrowup"?"↑":k==="arrowdown"?"↓":k.toUpperCase();
     if(/^(arrow|t$|escape)/.test(k))return;
