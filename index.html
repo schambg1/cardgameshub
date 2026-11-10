@@ -1525,6 +1525,25 @@ html.px #jb table,html.px #jb .jbpay{border-radius:6px!important;border-width:3p
 html.px .chbtn b,html.px .chbtn span{font-family:"Hub Pixel",monospace;font-weight:400}
 html.px .chclaim,html.px .claim{border-radius:8px!important;border:3px solid var(--px-edge)!important;background:var(--px-pan)!important}
 html.px .view .watchnote{border-radius:8px;border:3px solid var(--px-edge);background:var(--px-pan)}
+.chbar{display:none}
+/* pixel Cheat button: a chunky block with a draining timer bar, and Let it go as a real button */
+html.px .chcall{gap:10px;width:220px}
+html.px .chbtn{width:220px;height:92px;border-radius:10px;clip-path:none;font:400 30px/1 "Hub Pixel",monospace;letter-spacing:.04em;color:#fff;
+  background:var(--px-red)!important;border:4px solid var(--px-edge);text-shadow:3px 3px 0 #6a120d;animation:pxpulse 1s steps(2) infinite;
+  box-shadow:inset 0 -6px 0 var(--px-redd),inset 0 4px 0 rgba(255,255,255,.25),0 6px 0 var(--px-edge)!important}
+@keyframes pxpulse{50%{background:#ff5a4f!important;box-shadow:inset 0 -6px 0 var(--px-redd),inset 0 4px 0 rgba(255,255,255,.3),0 6px 0 var(--px-edge),0 0 0 4px rgba(255,208,74,.45)!important}}
+html.px .chbtn:active:not(:disabled){transform:translateY(4px);box-shadow:inset 0 -3px 0 var(--px-redd),0 2px 0 var(--px-edge)!important}
+html.px .chbtn:disabled{filter:grayscale(.8) brightness(.7)}
+html.px .chbtn kbd{display:block;margin:6px auto 0;width:max-content;font:400 15px "Hub Pixel",monospace;padding:2px 6px;border-radius:3px;background:rgba(0,0,0,.3);border:0;color:#ffd7d2;text-shadow:none}
+html.px .chring{display:none}
+html.px .chbar{display:block;width:100%;height:16px;background:#0d1417;border:3px solid var(--px-edge);border-radius:4px;overflow:hidden}
+html.px .chbar i{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--px-gold) 0 10px,#c98f12 10px 12px);animation:pxbar linear forwards}
+@keyframes pxbar{to{width:0}}
+html.px .chcall .chlet{width:100%;padding:12px 10px;font:400 20px "Hub Pixel",monospace!important;text-decoration:none;letter-spacing:.06em;color:#fff!important;
+  background:#55656b!important;border:3px solid var(--px-edge)!important;border-radius:8px!important;box-shadow:inset 0 -4px 0 #36444a,0 4px 0 var(--px-edge)!important;text-shadow:2px 2px 0 rgba(0,0,0,.55)}
+html.px .chcall .chlet:active{transform:translateY(3px);box-shadow:inset 0 -2px 0 #36444a,0 1px 0 var(--px-edge)!important}
+html.px .chcall .pill{font-size:15px;padding:8px 10px}
+html.desk.px .chcall{width:240px}html.desk.px .chbtn{width:240px;height:110px;font-size:40px}
 </style>
 
 <div id="app"></div>
@@ -1599,11 +1618,11 @@ function tmPick(){const v=TMS();
 
 /* ---------- app state ---------- */
 const APP={screen:"hub",mode:"local",count:4,names:["Player 1","Player 2","Player 3","Player 4","Player 5","Player 6"],
-  myName:(store.get("ew-name")||""),joinCode:"",sheet:null,err:"",buyIn:50,lastResult:null,bj:"local",bjCount:2,bc:"local",bcCount:2,jb:"mine",jbCount:2,hm:"local",om:"off",omBuy:25,omNew:null,omMsg:"",rm:"off",rmBuy:25,rmSel:[],rmSort:"suit",hmCount:3,hmBlinds:0,hmRaise:0,hmRB:false,hmKey:"",peek:false};
+  myName:(store.get("ew-name")||""),joinCode:"",sheet:null,err:"",buyIn:0,lastResult:null,bj:"local",bjCount:2,bc:"local",bcCount:2,jb:"mine",jbCount:2,hm:"local",om:"off",omBuy:0,omNew:null,omMsg:"",rm:"off",rmBuy:0,rmSel:[],rmSort:"suit",hmCount:3,hmBlinds:0,hmRaise:0,hmRB:false,hmKey:"",peek:false};
 let G=null;            // engine state (same-phone, or host)
 let V=null, prevV=null;// what's on screen
 const CID=store.get("ew-cid")||(()=>{const c=rid(10);store.set("ew-cid",c);return c})();
-const NET={room:undefined,nr:null,code:"",seats:[],seen:{},buyIn:50,info:{},agree:null,my:{flip:0,slap:0,nonce:rid(6)},started:false,host:null,hostGone:false,connected:true,mySeat:-1,searchTimer:null};
+const NET={room:undefined,nr:null,code:"",seats:[],seen:{},buyIn:0,info:{},agree:null,my:{flip:0,slap:0,nonce:rid(6)},started:false,host:null,hostGone:false,connected:true,mySeat:-1,searchTimer:null};
 let timer=null;const toastSeen={};
 
 window.claude?.use?.("room").then(r=>{NET.room=wrapRoom(r)||null;lobbyHook();render();pendingJoin();}).catch(()=>{NET.room=null;render();pendingJoin();});
@@ -1708,7 +1727,7 @@ function toView(){
 function settle(){
   if(V&&V.winner!=null&&APP.mode!=="local"&&NET.mySeat>=0){
     const k=V.stake&&V.stake.gid?V.stake.gid:G?(G.dcKey||(G.dcKey=rid(6))):null;
-    if(k)gameDone("ew",APP.mode==="practice"?"pr":"on",{gid:"ew"+k,win:NET.mySeat===V.winner,net:0,with:V.players.filter((q,i)=>i!==NET.mySeat&&!/^Bot /.test(q.name)).map(q=>q.name)});}
+    if(k)gameDone("ew",APP.mode==="practice"?"pr":"on",{gid:"ew"+k,win:NET.mySeat===V.winner,net:0,free:!(V.stake&&V.stake.buyIn),with:V.players.filter((q,i)=>i!==NET.mySeat&&!/^Bot /.test(q.name)).map(q=>q.name)});}
   if(APP.mode==="practice"||!V||V.winner==null||!V.stake)return;
   const {buyIn,gid,n}=V.stake;
   if(settled(gid))return;
@@ -1922,7 +1941,7 @@ function setup(){
     <p>Seats go around the table in this order. Half of you sit across from the others.</p></div>
     <div class="label">Players</div><div class="count-pick">${btns}</div>
     <div class="names">${names}</div>
-    <div class="potline"><div class="label">Buy-in each · winner takes the pot</div><div class="chip">Pot ${fmt(APP.buyIn*chk.playing.length)}</div></div>
+    <div class="potline"><div class="label">Buy-in each · winner takes the pot</div><div class="chip">${APP.buyIn?`Pot ${fmt(APP.buyIn*chk.playing.length)}`:"Free"}</div></div>
     <div class="stakes">${STAKES.map(b=>`<button data-act="stake-local" data-b="${b}" aria-pressed="${APP.buyIn===b}">${b||"Free"}</button>`).join("")}</div>
     <p class="note ${chk.ok?"":"warn"}" id="local-check">${esc(chk.why)}</p>
     <div class="row"><button class="btn gold" style="flex:1" data-act="deal" id="deal-btn" ${chk.ok?"":"disabled"}>Deal 52 cards</button></div>
@@ -1948,7 +1967,7 @@ function lobby(){
     const tag=b>0&&ch<b?"sitting out":i===0?"host":(b===0?"":(s.ag===b?`<span class="ok">in ✓</span>`:"deciding…"));
     return`<div><span class="dot" style="background:${COLORS[i]}"></span>${esc(s.n)}${s.c===CID?" (you)":""}
       <span class="chip ${ch<b?"short":""}" style="margin-left:auto">${fmt(ch)}</span><em style="margin-left:8px">${tag}</em></div>`}).join("");
-  const pot=`<div class="potline"><div class="label">Buy-in each · winner takes the pot</div><div class="chip">Pot ${fmt(b*Math.max(list.length,2))}</div></div>`;
+  const pot=`<div class="potline"><div class="label">Buy-in each · winner takes the pot</div><div class="chip">${b?`Pot ${fmt(b*Math.max(list.length,2))}`:"Free"}</div></div>`;
   let body;
   if(host){
     const cs=canStart();
@@ -3961,7 +3980,7 @@ function rmSettle(){
   markSettled(v.gid);
   if(APP.rm==="practice"){v.pl.forEach(p=>{if(p.in&&p.net)prSet(p.n,prChips(p.n)+p.net);});if(v.pl[0]&&v.pl[0].in)gameDone("rm","pr",{gid:v.gid,win:v.winner===0});}
   else{const mi=v.pl.findIndex(p=>p.c===CID),me=v.pl[mi];
-    if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand("rm",me.net||0,v.winner===mi);gameDone("rm","on",{gid:v.gid,win:v.winner===mi,net:me.net||0,with:(v.pl||[]).filter(q=>q!==me&&q.n&&!/^Bot /.test(q.n)).map(q=>q.n)});}
+    if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand("rm",me.net||0,v.winner===mi);gameDone("rm","on",{gid:v.gid,win:v.winner===mi,net:me.net||0,free:!v.buyIn,with:(v.pl||[]).filter(q=>q!==me&&q.n&&!/^Bot /.test(q.n)).map(q=>q.n)});}
     if(APP.rm==="client")RNET.nr?.presence({chips:wallet.get()}).catch(()=>{});}
   if(APP.rm!=="client")setTimeout(rmChanged,0);
 }
@@ -4247,7 +4266,7 @@ function rmTable(){
   else msg=myTurn?"Your turn":`${esc(v.pl[v.turn].n)}'s turn`;
   return`<div id="rm">
     <div class="bj-top"><span class="eyebrow">Rummy</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(RNET.code.toUpperCase())}, invite friends">${esc(RNET.code.toUpperCase())}</button>`:`<span class="codepill">Practice</span>`}
-      ${online?netStatus():""}<span class="shoe potspot">${v.buyIn?`Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}`:"Free play"}</span>${rulesBtn("rm-rules")}${chatBtn()}<button class="menu-btn2" data-act="rm-menu" aria-label="Menu">≡</button></div>
+      ${online?netStatus():""}${v.buyIn?`<span class="shoe potspot">Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}</span>`:`<span class="shoe potspot"></span>`}${rulesBtn("rm-rules")}${chatBtn()}<button class="menu-btn2" data-act="rm-menu" aria-label="Menu">≡</button></div>
     <div class="hseats">${order.map(i=>rmSeat(v,i)).join("")}</div>
     <div class="rmcenter">
       <div class="rmpiles">
@@ -4411,7 +4430,7 @@ function omSettle(){
   markSettled(v.gid);
   if(APP.om==="practice"){v.pl.forEach(p=>{if(p.in&&p.net)prSet(p.n,prChips(p.n)+p.net);});if(v.pl[0]&&v.pl[0].in)gameDone("om","pr",{gid:v.gid,win:v.loser!==0});}
   else{const mi=v.pl.findIndex(p=>p.c===CID),me=v.pl[mi];
-    if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand("om",me.net||0,v.loser!==mi);gameDone("om","on",{gid:v.gid,win:v.loser!==mi,net:me.net||0,with:(v.pl||[]).filter(q=>q!==me&&q.n&&!/^Bot /.test(q.n)).map(q=>q.n)});}
+    if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand("om",me.net||0,v.loser!==mi);gameDone("om","on",{gid:v.gid,win:v.loser!==mi,net:me.net||0,free:!v.buyIn,with:(v.pl||[]).filter(q=>q!==me&&q.n&&!/^Bot /.test(q.n)).map(q=>q.n)});}
     if(APP.om==="client")ONET.nr?.presence({chips:wallet.get()}).catch(()=>{});}
   if(APP.om!=="client")setTimeout(omChanged,0);
 }
@@ -4660,7 +4679,7 @@ function omTable(){
   const pv=prevOMV;if(pv&&pv.gid===v.gid&&pv.actN!==v.actN)FXQ.card=true;
   return`<div id="om">
     <div class="bj-top"><span class="eyebrow">Old Maid</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(ONET.code.toUpperCase())}, invite friends">${esc(ONET.code.toUpperCase())}</button>`:`<span class="codepill">Practice</span>`}
-      ${online?netStatus():""}<span class="shoe potspot">${v.buyIn?`Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}`:"Free play"}</span>${rulesBtn("om-rules")}${chatBtn()}<button class="menu-btn2" data-act="om-menu" aria-label="Menu">≡</button></div>
+      ${online?netStatus():""}${v.buyIn?`<span class="shoe potspot">Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}</span>`:`<span class="shoe potspot"></span>`}${rulesBtn("om-rules")}${chatBtn()}<button class="menu-btn2" data-act="om-menu" aria-label="Menu">≡</button></div>
     <div class="hseats">${order.map(i=>omSeat(v,i)).join("")}</div>
     <div class="rmcenter">${center}${maid}<div class="msg">${msg}</div><div class="toast">${toastText(v)}</div>${lp}</div>
     <div class="bj-bar">${omPanel(v,mine,hand)}</div></div>`;
@@ -5210,8 +5229,16 @@ function rcNote(g,mode,net,won,withNames){
     L=[e,...L.filter(x=>x.g!==g)].slice(0,5);store.set("hub-recent",L);}catch(e){}
 }
 // one call per finished hand or round: counts challenges and remembers the table
+/* free tables: winning still earns a few real chips, so these games feed the rest of the hub */
+const FREE_WIN=10;
+function freeWinToast(){
+  let el=document.getElementById("achtoast");if(!el){el=document.createElement("div");el.id="achtoast";el.setAttribute("aria-live","polite");document.body.appendChild(el);}
+  el.innerHTML=`<div class="acht"><span class="acht-m">🪙</span><span><small>Free table win</small><b>+${FREE_WIN} chips</b><span class="st2">A little something for winning</span></span><span class="acht-r">+${FREE_WIN}</span></div>`;
+  sfx("chip");clearTimeout(achToast.t);achToast.t=setTimeout(()=>{el.innerHTML="";},3600);
+}
 function gameDone(g,mode,o){
   const key=g+":"+(o.gid||"");if(o.gid){if(gameDone.seen.has(key))return;gameDone.seen.add(key);}
+  if(mode==="on"&&o.win&&o.free){wallet.set(wallet.get()+FREE_WIN);try{if(typeof pushChips==="function")pushChips();}catch(e){}setTimeout(freeWinToast,1200);}
   dcHit(g,"play");if(o.win)dcHit(g,"win");if(o.nat)dcHit(g,"nat");
   rcNote(g,mode,mode==="pr"?0:o.net,o.win,o.with);
   achGame(g,mode,o);
@@ -5664,9 +5691,9 @@ function prStart(){
   }else if(PR.game==="hm"){
     hmStop();APP.hm="practice";hmNewTable([{name:you},...bots.map(n=>({name:n,bot:true}))],HM_BLINDS[0]);prevHV=null;APP.screen="hm";hmStart();hmChanged();
   }else if(PR.game==="om"){
-    omStop();APP.om="practice";omNewTable([{name:you},...bots.map(n=>({name:n,bot:true}))],25);prevOMV=null;APP.screen="om";omStart();omChanged();
+    omStop();APP.om="practice";omNewTable([{name:you},...bots.map(n=>({name:n,bot:true}))],APP.omBuy|0);prevOMV=null;APP.screen="om";omStart();omChanged();
   }else if(PR.game==="rm"){
-    rmStop();APP.rm="practice";rmNewTable([{name:you},...bots.map(n=>({name:n,bot:true}))],25);prevRMV=null;APP.screen="rm";rmStart();rmChanged();
+    rmStop();APP.rm="practice";rmNewTable([{name:you},...bots.map(n=>({name:n,bot:true}))],APP.rmBuy|0);prevRMV=null;APP.screen="rm";rmStart();rmChanged();
   }else if(PR.game==="jb"){
     APP.jb="practice";jbNew([you],bots);APP.screen="jb";render();
   }else{
@@ -5723,7 +5750,7 @@ const XD={},XS={};
 const xNetNew=()=>({nr:null,code:"",info:{},seen:{},host:null,hostGone:false,connected:true,searchTimer:null,ec:null,hostKey:null,hostPub:null,
   my:{n:0,acts:[],nonce:rid(6),sit:false},priv:null,privGid:null,privEh:"",pend:"",goneKey:"",hs:0});
 function xReg(k,def){
-  XD[k]=def;XS[k]={k,mode:"off",S:null,V:null,PV:null,N:xNetNew(),tt:null,tk:"",buy:def.buyins[1],bots:{},ui:{sel:[]}};
+  XD[k]=def;XS[k]={k,mode:"off",S:null,V:null,PV:null,N:xNetNew(),tt:null,tk:"",buy:0,bots:{},ui:{sel:[]}};
   ONG[k]={net:()=>XS[k].N,mode:()=>XS[k].mode,join:()=>{APP.screen=k+"-mode";xJoin(k);},stop:()=>xStop(k),take:()=>xTakeover(k)};
   PR_GAMES[k]=def.name;GAME_NAMES[k]=def.name;
 }
@@ -5817,7 +5844,7 @@ function xSettle(k){
   const mi=X.mode==="practice"?0:v.pl.findIndex(p=>p.c===CID),me=v.pl[mi];
   if(X.mode==="practice"){v.pl.forEach(p=>{if(p.in&&p.net)prSet(p.n,prChips(p.n)+p.net);});if(me&&me.in)gameDone(k,"pr",{gid:v.gid,win:v.winner===0,fx:me.fx});}
   else{if(me&&me.in){if(me.net)wallet.set(wallet.get()+me.net);stHand(k,me.net||0,v.winner===mi);
-      gameDone(k,"on",{gid:v.gid,win:v.winner===mi,net:me.net||0,fx:me.fx,with:v.pl.filter(q=>q!==me&&!q.bot&&q.n).map(q=>q.n)});}
+      gameDone(k,"on",{gid:v.gid,win:v.winner===mi,net:me.net||0,free:!v.buyIn,fx:me.fx,with:v.pl.filter(q=>q!==me&&!q.bot&&q.n).map(q=>q.n)});}
     if(X.mode==="client")X.N.nr?.presence({chips:wallet.get()}).catch(()=>{});}
   if(me&&me.in&&v.winner===mi)celebrate(k+v.gid,XD[k].winTitle||"You win!",v.buyIn&&me.net>0?`${money(me.net)} chips`:XD[k].winSub||"");
   if(X.mode!=="client")setTimeout(()=>xChanged(k),0);
@@ -5839,7 +5866,7 @@ function xGoneTick(k){
 }
 function xPractice(k,you,bots){
   const X=XS[k];xStop(k);X.mode="practice";X.bots={};
-  xNewTable(k,[{name:you},...bots.map(n=>({name:n,bot:true}))],XD[k].buyins[1]||0);X.PV=null;APP.screen=k;xStart(k);
+  xNewTable(k,[{name:you},...bots.map(n=>({name:n,bot:true}))],X.buy|0);X.PV=null;APP.screen=k;xStart(k);
 }
 
 /* online */
@@ -6014,7 +6041,7 @@ function xTable(k){
   const body=v.ph==="wait"?`<div class="msg">${mode==="client"?"Waiting for the host to deal":"Ready to deal"}</div>`:D.center(v,mine,priv,X);
   return`<div id="${k}" class="xtab">
     <div class="bj-top"><span class="eyebrow">${esc(D.name)}</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(X.N.code.toUpperCase())}, invite friends">${esc(X.N.code.toUpperCase())}</button>`:`<span class="codepill">Practice</span>`}
-      ${online?netStatus():""}<span class="shoe potspot">${v.buyIn?`Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}`:"Free play"}</span>${rulesBtn(k+"-rules")}${chatBtn()}<button class="menu-btn2" data-act="x-menu" data-g="${k}" aria-label="Menu">≡</button></div>
+      ${online?netStatus():""}${v.buyIn?`<span class="shoe potspot">Pot ${fmt(v.buyIn*Math.max(2,v.pl.filter(p=>p.in).length))}</span>`:`<span class="shoe potspot"></span>`}${rulesBtn(k+"-rules")}${chatBtn()}<button class="menu-btn2" data-act="x-menu" data-g="${k}" aria-label="Menu">≡</button></div>
     <div class="hseats">${order.map(i=>xSeat(k,v,i,mine)).join("")}</div>
     <div class="rmcenter xcenter">${body}<div class="toast">${toastText(v)}</div></div>
     <div class="bj-bar">${v.ph==="play"?(mine>=0&&v.pl[mine].in?D.panel(v,mine,priv,X):watchNote(v,mine,"game")):xWaitPanel(k,v,mine)}</div></div>`;
@@ -6164,7 +6191,8 @@ xReg("ch",{name:"Cheat",tag:"Bluff, or call it · 3–6 players",min:3,max:6,sea
       const passed=v.passed&&v.passed.includes(mine);
       btn=`<div class="chcall"><button class="chbtn" data-act="x-do" data-g="ch" data-a="call" ${passed?"disabled":""} aria-label="Call Cheat">
         <svg class="chring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="47" class="rbg"/><circle cx="50" cy="50" r="47" class="rfg" style="stroke-dashoffset:${off};animation-duration:${left}ms"/></svg><span>CHEAT!</span></button>
-        ${passed?`<span class="pill">Waiting for the others…</span>`:`<button class="link" data-act="x-do" data-g="ch" data-a="pass">Let it go</button>`}</div>`;
+        <span class="chbar" aria-hidden="true"><i style="width:${Math.round(100*left/CH_WIN)}%;animation-duration:${left}ms"></i></span>
+        ${passed?`<span class="pill">Waiting for the others…</span>`:`<button class="link chlet" data-act="x-do" data-g="ch" data-a="pass">Let it go</button>`}</div>`;
     }
     return`<div class="chmid"><div class="chstack">${pile}<span class="lbl">${R?`${R.pileN} cards`:`Pile · ${v.pileN||0} ${v.pileN===1?"card":"cards"}`}</span></div>${claim}${btn}</div>`;
   },
