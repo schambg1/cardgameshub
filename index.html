@@ -4,7 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0f2148">
-<meta name="description" content="Card games with friends: Egyptian War, Blackjack, Baccarat, Jacks or Better, Texas Hold'em, Rummy and Old Maid. Host a table and share the code.">
+<meta name="description" content="Card games with friends: Blackjack, Baccarat, Texas Hold'em, Jacks or Better, Rummy, Old Maid, Speed, Cheat, Garbage, Solitaire and Egyptian War. Host a table and share the code.">
+<title>Card Game Hub</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Card Hub">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px;font-family:system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <script>
 /* Peer-to-peer connection layer: the first phone to open a table becomes its relay (a tiny server inside
@@ -1544,6 +1554,38 @@ html.px .chcall .chlet{width:100%;padding:12px 10px;font:400 20px "Hub Pixel",mo
 html.px .chcall .chlet:active{transform:translateY(3px);box-shadow:inset 0 -2px 0 #36444a,0 1px 0 var(--px-edge)!important}
 html.px .chcall .pill{font-size:15px;padding:8px 10px}
 html.desk.px .chcall{width:240px}html.desk.px .chbtn{width:240px;height:110px;font-size:40px}
+/* ===== Opponents in a row along the top, in every game ===== */
+#bj,#bc{grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
+.bj-opps{display:flex;gap:8px;overflow-x:auto;justify-content:safe center;padding:2px 2px 4px;scrollbar-width:none}
+.bj-opps::-webkit-scrollbar{display:none}
+.bj-opps .pbox{flex:1 1 0!important;min-width:0!important;max-width:200px!important;width:auto!important;padding:6px!important;gap:4px;font-size:12px}
+.bj-opps .pbox *{min-width:0}
+.bj-opps .pbox :is(b,strong,.st2){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html:not(.desk) .bj-opps .pbox:nth-last-child(n+3) .pchips,html:not(.desk) .bj-opps:has(>.pbox:nth-child(3)) :is(.pchips,.bal){display:none}
+.bj-opps .pbox .card{--w:30px}
+.bj-opps .pbox .ava{--as:24px!important}
+.bj-opps .pbox :is(.tokens,.bjtokens){display:none}
+html.desk .bj-opps .pbox{max-width:220px!important}html.desk .bj-opps .pbox .card{--w:38px}
+html.desk #bj,html.desk #bc{grid-template-rows:auto auto auto auto minmax(0,1fr)}
+/* Cheat, Garbage, Rummy, Old Maid on a computer: across the top instead of a left column */
+html.desk #ch,html.desk #gb,html.desk #rm,html.desk #om{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:auto auto minmax(0,1fr) auto!important}
+html.desk :is(#ch,#gb,#rm,#om)>.hseats{grid-column:1!important;grid-row:2!important;display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:flex-start!important;gap:clamp(24px,5vw,72px)!important;align-self:start}
+html.desk :is(#ch,#gb,#rm,#om)>.hseats>*{flex:0 0 auto;min-width:150px}
+html.desk :is(#ch,#gb,#rm,#om)>:not(.bj-top):not(.hseats):not(.bj-bar){grid-column:1!important;grid-row:3!important}
+html.desk :is(#ch,#gb,#rm,#om)>.bj-bar{grid-row:4!important}
+/* phones: all opponents fit in one row */
+:is(#ch,#gb,#rm,#om,#hm)>.hseats{display:flex;justify-content:center;gap:4px}
+:is(#ch,#gb,#rm,#om,#hm)>.hseats>*{flex:1 1 0;min-width:0;max-width:130px}
+html:not(.desk) :is(#ch,#gb,#rm,#om,#hm)>.hseats .rmcount{white-space:nowrap;font-size:12px;padding:2px 6px}
+html:not(.desk) :is(#ch,#gb,#rm,#om,#hm)>.hseats:has(>:nth-child(4)) .ava{--as:38px!important}
+html:not(.desk) :is(#ch,#gb,#rm,#om,#hm)>.hseats:has(>:nth-child(4)) :is(b,strong){font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+/* Hold'em on a computer: opponents in a row above the table instead of around it */
+html.desk #hm{grid-template-rows:auto auto minmax(0,1fr)!important}
+html.desk #hm>.hseats{grid-row:2!important;position:static!important;display:flex!important;justify-content:center!important;gap:clamp(24px,5vw,72px)!important;pointer-events:auto!important;padding:0!important}
+html.desk #hm>.hseats>*{position:static!important;transform:none!important;flex:0 0 auto;min-width:130px;max-width:none;align-self:flex-start!important;margin:0!important}
+html.desk #hm>.hoval{margin:16px 60px 24px!important;align-self:start!important}
+html.desk #hm>.hoval{grid-row:3!important}
+html.four.px .card[data-key$="-2"]{color:#2a6fdb}html.four.px .card[data-key$="-3"]{color:#1d8a3c}
 </style>
 
 <div id="app"></div>
@@ -2548,13 +2590,14 @@ function bjTable(){
   return`<div id="bj">
     <div class="bj-top"><span class="eyebrow">Blackjack</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(BNET.code.toUpperCase())}, invite friends">${esc(BNET.code.toUpperCase())}</button>`:mode==="practice"?`<span class="codepill">Practice</span>`:""}
       ${online?netStatus():`<span class="shoe">${v.shoe} cards in shoe</span>`}${rulesBtn("bj-rules")}${chatBtn()}<button class="menu-btn2" data-act="bj-menu" aria-label="Menu">≡</button></div>
+    ${mine>=0&&v.pl.length>1?`<div class="bj-opps">${v.pl.map((_,i)=>i===mine?"":bjBox(v,i,mine,pv)).join("")}</div>`:""}
     <div class="dealer">${net}
       <div class="shoespot" aria-hidden="true"><div class="card down"></div><div class="card down"></div><div class="card down"></div></div>
       <div class="hand" data-from=".shoespot">${v.dl.length?bjCardRow(v.dl,same?pv.dl:null,same):`<div class="slot"></div><div class="slot"></div>`}</div>
       <div class="dmeta"><span class="label">Dealer</span>${dTot?`<span class="tot ${bjTotal(v.dl).t>21?"over":""}">${dTot}</span>`:""}</div>
       <div class="felt-line">Blackjack pays 3 to 2 · Dealer stands on 17</div></div>
     <div class="bj-msg"><div class="msg">${status}</div><div class="toast">${toastText(v)}</div></div>
-    <div class="bj-players" data-from=".shoespot">${v.pl.map((_,i)=>bjBox(v,i,mine,pv)).join("")}</div>
+    <div class="bj-players" data-from=".shoespot">${v.pl.map((_,i)=>mine>=0&&i!==mine?"":bjBox(v,i,mine,pv)).join("")}</div>
     <div class="bj-bar">${bjBar(v,mine)}</div></div>`;
 }
 function bjRulesSheet(){
@@ -2904,13 +2947,14 @@ function bcTable(){
   return`<div id="bc">
     <div class="bj-top"><span class="eyebrow">Baccarat</span>${online?`<button class="codepill" data-act="invite" aria-label="Table code ${esc(CNET.code.toUpperCase())}, invite friends">${esc(CNET.code.toUpperCase())}</button>`:mode==="practice"?`<span class="codepill">Practice</span>`:""}
       ${online?netStatus():`<span class="shoe">${v.shoe} cards in shoe</span>`}${rulesBtn("bc-rules")}${chatBtn()}<button class="menu-btn2" data-act="bc-menu" aria-label="Menu">≡</button></div>
+    ${mine>=0&&v.pl.length>1?`<div class="bj-opps">${v.pl.map((_,i)=>i===mine?"":bcBox(v,i,mine)).join("")}</div>`:""}
     <div class="dealer">${net}
       <div class="shoespot" aria-hidden="true"><div class="card down"></div><div class="card down"></div><div class="card down"></div></div>
       <div class="board" data-from=".shoespot">${bcSideHTML("player","Player",v.P,same&&pv.P,same,v.win)}${bcSideHTML("banker","Banker",v.B,same&&pv.B,same,v.win)}</div>
       <div class="felt-line">Tie pays 8 to 1 · Banker pays 0.95 to 1</div>
       <div class="road" aria-label="Recent results">${road}</div></div>
     <div class="bj-msg"><div class="msg">${status}</div><div class="toast">${toastText(v)}</div></div>
-    <div class="bj-players">${v.pl.map((_,i)=>bcBox(v,i,mine)).join("")}</div>
+    <div class="bj-players">${v.pl.map((_,i)=>mine>=0&&i!==mine?"":bcBox(v,i,mine)).join("")}</div>
     <div class="bj-bar">${bcBar(v,mine)}</div></div>`;
 }
 function bcRulesSheet(){
