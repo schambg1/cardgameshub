@@ -1303,7 +1303,7 @@ html.desk .stwrap{max-width:980px}
 html.desk .stcols{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .profbtns{display:flex;flex-direction:column;gap:10px}
 /* four-color deck */
-html.four .card[data-key$="-2"]{color:#2a6fdb}html.four .card[data-key$="-3"]{color:#1d8a3c}
+html.four .card.su2{color:#2a6fdb}html.four .card.su3{color:#1d8a3c}
 /* a chosen felt replaces each game's own color */
 html[data-felt] .view :is(#sp,#ch,#gb,.xtab){--f1:var(--felt-2);--f2:var(--felt)}
 html[data-felt] .view #so{background:var(--lamp),var(--tex),radial-gradient(ellipse at 50% 35%,var(--felt-2),var(--felt) 80%)}
@@ -1585,7 +1585,16 @@ html.desk #hm>.hseats{grid-row:2!important;position:static!important;display:fle
 html.desk #hm>.hseats>*{position:static!important;transform:none!important;flex:0 0 auto;min-width:130px;max-width:none;align-self:flex-start!important;margin:0!important}
 html.desk #hm>.hoval{margin:16px 60px 24px!important;align-self:start!important}
 html.desk #hm>.hoval{grid-row:3!important}
-html.four.px .card[data-key$="-2"]{color:#2a6fdb}html.four.px .card[data-key$="-3"]{color:#1d8a3c}
+html.four.px .card.su2{color:#2a6fdb}html.four.px .card.su3{color:#1d8a3c}
+/* turn timer: round in the casino look, square (to match the square avatars) in pixel */
+.ring .rsq{display:none}
+html.px .ring{transform:none}
+html.px .ring circle{display:none}
+html.px .ring .rsq{display:inline}
+html.px .ring .rbg.rsq{stroke:rgba(0,0,0,.45);stroke-width:6}
+html.px .ring .rfg.rsq{stroke:var(--px-gold);stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter}
+html.px .ring .rfg.rsq.low{stroke:var(--px-red)}
+html.px .ringwrap .tsec{border-radius:4px!important;font-family:"Hub Pixel",monospace;font-weight:400}
 </style>
 
 <div id="app"></div>
@@ -1953,7 +1962,7 @@ function act(kind,seat){
 function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function cardHTML(c,extra="",style=""){
   const [r,s]=c,red=s===1||s===2,l=label(r),su=SUITS[s];
-  return`<div class="card ${red?"red":""} ${royal(r)?"royal":""} ${extra}" style="${style}" data-key="c${r}-${s}">
+  return`<div class="card su${s} ${red?"red":""} ${royal(r)?"royal":""} ${extra}" style="${style}" data-key="c${r}-${s}">
     <div class="c tl">${l}<small>${su}</small></div><div class="mid">${royal(r)?l:su}</div><div class="c br">${l}<small>${su}</small></div></div>`;
 }
 function modeScreen(){
@@ -3671,7 +3680,7 @@ function ringHTML(key,tl){
   const dl=turnDeadline(key,tl);if(!dl)return"";
   let tot=RING_TOT.get(key);if(!tot){tot=Math.max(1000,tl||0);if(RING_TOT.size>300)RING_TOT.clear();RING_TOT.set(key,tot);}
   const r=Math.max(0,dl-Date.now()),C=170,off=Math.round(C*(1-Math.min(1,r/tot)));
-  return`<svg class="ring" viewBox="0 0 60 60" aria-hidden="true" data-key="ring-${dl}" data-static><circle cx="30" cy="30" r="27" class="rbg"></circle><circle cx="30" cy="30" r="27" class="rfg ${r<=5000?"low":""}" data-dl="${dl}" style="stroke-dashoffset:${off};animation-duration:${r}ms"></circle></svg>`;
+  return`<svg class="ring" viewBox="0 0 60 60" aria-hidden="true" data-key="ring-${dl}" data-static><circle cx="30" cy="30" r="27" class="rbg"></circle><circle cx="30" cy="30" r="27" class="rfg ${r<=5000?"low":""}" data-dl="${dl}" style="stroke-dashoffset:${off};animation-duration:${r}ms"></circle><path d="M30 3H57V57H3V3H30" pathLength="170" class="rbg rsq"></path><path d="M30 3H57V57H3V3H30" pathLength="170" class="rfg rsq ${r<=5000?"low":""}" data-dl="${dl}" style="stroke-dashoffset:${off};animation-duration:${r}ms"></path></svg>`;
 }
 const HSH={gid:"",hist:{}};
 function hmEq(v,hole){
